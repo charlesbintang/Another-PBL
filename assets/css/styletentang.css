@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,600&display=swap');
 /* .body {
-    background-image: url("assets/Background.png");
+    background-image: url("<?= base_url('assets/') ?>Background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -73,7 +73,8 @@
   border: 1.5px solid red;
 } */
 
-div, p {
+div,
+p {
   margin-bottom: 0px;
   /* margin-right: 60px; */
   /* border: 1.5px solid #0000FF; */
@@ -97,7 +98,8 @@ div, p {
   vertical-align: middle;
 } */
 
-.tentang1, #konten>* {
+.tentang1,
+#konten>* {
   width: 1400px;
 }
 
@@ -134,7 +136,7 @@ img {
   text-justify: inter-word;
 }
 
-.margin-left-list{
+.margin-left-list {
   margin-left: 42px;
   text-align: justify;
   text-justify: inter-word;
@@ -161,6 +163,8 @@ ul {
 .profile:hover {
   box-shadow: 2px rgba(0, 0, 0, 0.4);
   transform: scale(1.2);
-  -ms-transform: scale(1.35); /* IE 9 */
-  -webkit-transform: scale(1.35); /* Safari 3-8 */
+  -ms-transform: scale(1.35);
+  /* IE 9 */
+  -webkit-transform: scale(1.35);
+  /* Safari 3-8 */
 }

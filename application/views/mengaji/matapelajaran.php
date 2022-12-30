@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en"> <!-- class="h-100" -->
+<html lang="en">
+<!-- class="h-100" -->
 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,29 +13,27 @@
     <meta name="author" content="Farid Jafar">
     <meta name="generator" content="Arfandi">
     <title>Belajar Mengaji</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,600&display=swap">
-    <link rel="stylesheet" href="style.css" type="text/css"> <!--CSS Custom-->
-    <!-- <link rel="stylesheet" href="admin.css" type="text/css"> --> <!--CSS Custom-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,600&display=swap">
+
+    <!--CSS Custom-->
+    <!-- <link rel="stylesheet" href="admin.css" type="text/css"> -->
+    <!--CSS Custom-->
+    <script src="<?= base_url('assets/') ?>js/jquery.min.js"></script>
+    <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
+    <script src="<?= base_url('assets/') ?>js/bootstrap.js"></script>
 </head>
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="<?= base_url('assets/') ?>css/style.css" type="text/css">
 <style>
     body {
-        background-image: url("assets/Background.png");
+        background-image: url("<?= base_url('assets/') ?>Background.png");
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -84,15 +83,28 @@
 
     /* Fade in tabs */
     @-webkit-keyframes fadeEffect {
-        from {opacity: 0;}
-        to {opacity: 1;}
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
+
     @keyframes fadeEffect {
-        from {opacity: 0;}
-        to {opacity: 1;}
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
-    
-    table, tr, td {
+
+    table,
+    tr,
+    td {
         cursor: pointer;
         text-align: center;
         border: 2px solid #208454;
@@ -100,8 +112,11 @@
         /* border-collapse: collapse; */
         /* width: 50%; */
     }
-    td:hover {background-color: #208454;}
-    
+
+    td:hover {
+        background-color: #208454;
+    }
+
     /* .tablinks {
         border-right: 1.5px solid red;
     } */
@@ -141,13 +156,13 @@
                 <div class="mt-3">
                     <table class="table" style="width:100%">
                         <thead>
-                          <tr>
-                            <td scope="col" class="tablinks" onclick="openCity(event, 'AqidahAkhlak')">Aqidah Akhlak</td> <!-- id="defaultOpen" -->
-                            <td scope="col" class="tablinks" onclick="openCity(event, 'Fiqih')">Fiqih</td>
-                            <td scope="col" class="tablinks" onclick="openCity(event, 'Tajwid')">Tajwid</td>
-                            <!-- <td scope="col" class="tablinks" onclick="openCity(event, 'Tauhid')">Tauhid</td> -->
-                            <td scope="col" class="tablinks" onclick="openCity(event, 'KisahNabi')">Kisah Nabi</td>
-                          </tr>
+                            <tr>
+                                <td scope="col" class="tablinks" onclick="openCity(event, 'AqidahAkhlak')">Aqidah Akhlak</td> <!-- id="defaultOpen" -->
+                                <td scope="col" class="tablinks" onclick="openCity(event, 'Fiqih')">Fiqih</td>
+                                <td scope="col" class="tablinks" onclick="openCity(event, 'Tajwid')">Tajwid</td>
+                                <!-- <td scope="col" class="tablinks" onclick="openCity(event, 'Tauhid')">Tauhid</td> -->
+                                <td scope="col" class="tablinks" onclick="openCity(event, 'KisahNabi')">Kisah Nabi</td>
+                            </tr>
                         </thead>
                     </table>
                 </div>
@@ -217,9 +232,7 @@
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
     <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -227,16 +240,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <script>
         function openCity(evt, cityName) {
             var i, tabcontent, tablinks;

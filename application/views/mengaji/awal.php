@@ -12,24 +12,24 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,600&display=swap">
-    <link rel="stylesheet" href="style.css" type="text/css">
+
     <!--CSS Custom-->
     <!-- <link rel="stylesheet" href="admin.css" type="text/css"> -->
     <!--CSS Custom-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="<?= base_url('assets/') ?>js/jquery.min.js"></script>
+    <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
+    <script src="<?= base_url('assets/') ?>js/bootstrap.js"></script>
 </head>
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="<?= base_url('assets/') ?>css/style.css" type="text/css">
 <style>
     body {
-        background-image: url("assets/Background.png");
+        background-image: url("<?= base_url('assets/') ?>Background.png");
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -38,7 +38,7 @@
 
     @font-face {
         font-family: Poppins;
-        src: url(/assets/font/Poppins-Regular.ttf);
+        src: url(<?= base_url() ?>assets/font/Poppins-Regular.ttf);
     }
 
     /* .bd-placeholder-img {
