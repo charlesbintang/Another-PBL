@@ -75,13 +75,13 @@
         <h4 class="float-md-start mb-0"><b>Belajar Mengaji</b></h4>
         <ul class="nav nav-masthead justify-content-center float-md-end">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Beranda</a>
+                <a class="nav-link" href="<?= base_url() ?>">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pembelian.html">Pembelian Al-Qur'an</a>
+                <a class="nav-link" href="<?= base_url('Pembelian') ?>">Pembelian Al-Qur'an</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tentang.html">Tentang</a>
+                <a class="nav-link" href="<?= base_url('tentang') ?>">Tentang</a>
             </li>
         </ul>
     </nav>

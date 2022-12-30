@@ -38,7 +38,7 @@
 
     @font-face {
         font-family: Poppins;
-        src: url(<?= base_url() ?>assets/font/Poppins-Regular.ttf);
+        src: url(<?= base_url() ?>assets/font/Poppins-Regular.ttf)
     }
 
     /* .bd-placeholder-img {
@@ -99,13 +99,13 @@
         <h4 class="float-md-start mb-0"><b>Belajar Mengaji</b></h4>
         <ul class="nav nav-masthead justify-content-center float-md-end">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Beranda</a>
+                <a class="nav-link" href="<?= base_url() ?>">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pembelian.html">Pembelian Al-Qur'an</a>
+                <a class="nav-link" href="<?= base_url('pembelian') ?>">Pembelian Al-Qur'an</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tentang.html">Tentang</a>
+                <a class="nav-link" href="<?= base_url('tentang') ?>">Tentang</a>
             </li>
         </ul>
     </nav>
@@ -122,7 +122,7 @@
                 </p> -->
             </div>
             <div class="col" id="kanan">
-                <img src="assets/Alquran.png" alt="Al-Quran" style="width:450px" id="AlQuran">
+                <img src="<?= base_url('assets/') ?>Alquran.png" alt="Al-Quran" style="width:450px" id="AlQuran">
             </div>
         </div>
     </main>
@@ -131,9 +131,9 @@
             <div>
                 <h3 class="float-md-start mb-0">Belajar Mengaji</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="index.html">Beranda</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="pembelian.html">Pembelian Al-Qur'an</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="tentang.html">Tentang</a>
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="<?= base_url() ?>">Beranda</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="<?= base_url('Pembelian') ?>">Pembelian Al-Qur'an</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="<?= base_url('tentang') ?>">Tentang</a>
                 </nav>
             </div>
         </header>
