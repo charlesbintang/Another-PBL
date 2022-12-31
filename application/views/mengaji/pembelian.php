@@ -67,7 +67,7 @@
                     <img src="assets/Tokopedia.png" alt="Tokopedia" style="width:100px">
                 </a>
                 <!-- <p class="lead">
-                    <a href="matapelajaran.html" class="btn btn-lg btn-success fw-bold border-white bg-white">Learn more</a>
+                    <a href="<?= base_url('mulai') ?>" class="btn btn-lg btn-success fw-bold border-white bg-white">Learn more</a>
                 </p> -->
             </div>
             <div class="col" id="kanan">

@@ -116,9 +116,9 @@
                 <h2 class="mt-3" style="color: #478a63; font-weight: bold;">Belajar Mengaji menjadi lebih mudah dan
                     praktis</h2>
                 <p class="lead mt-3">Belajar ngaji sekarang dengan gratis tanpa perlu login</p>
-                <a class="btn btn-success mt-3" href="matapelajaran.html" role="button">Mulai</a>
+                <a class="btn btn-success mt-3" href="<?= base_url('mulai') ?>" role="button">Mulai</a>
                 <!-- <p class="lead">
-                    <a href="matapelajaran.html" class="btn btn-lg btn-success fw-bold border-white bg-white">Learn more</a>
+                    <a href="<?= base_url('mulai') ?>" class="btn btn-lg btn-success fw-bold border-white bg-white">Learn more</a>
                 </p> -->
             </div>
             <div class="col" id="kanan">
@@ -146,7 +146,7 @@
                     <h3>Assalamu'alaikum, Selamat Datang</h3>
                     <h2>Belajar Mengaji menjadi lebih mudah dan praktis</h2>
                     <p>Belajar ngaji sekarang dengan gratis tanpa perlu login</p>
-                    <a class="btn btn-success" href="matapelajaran.html" role="button">Mulai</a>
+                    <a class="btn btn-success" href="<?= base_url('mulai') ?>" role="button">Mulai</a>
                 </div>
                 <div class="col" id="kanan">
                     <img src="assets/Alquran.png" alt="Alquran" style="width:350px">
@@ -158,7 +158,7 @@
                 <h3>Assalamu'alaikum, Selamat Datang</h3>
                 <h2>Belajar Mengaji menjadi lebih mudah dan praktis</h2>
                 <p>Belajar ngaji sekarang dengan gratis tanpa perlu login</p>
-                <a class="btn btn-success" href="matapelajaran.html" role="button">Mulai</a>
+                <a class="btn btn-success" href="<?= base_url('mulai') ?>" role="button">Mulai</a>
             </div>
             <div class="col-md-6" id="kanan">
                 <img src="assets/Alquran.png" alt="Alquran" style="width:350px">

@@ -181,7 +181,7 @@
                         Akhlak merupakan sikap hidup atau kepribadian manusia dalam menjalankan sistem kehidupannya yang
                         dilandasi oleh Aqidah yang kokoh. Dengan kata lain, Akhlak merupakan manifestasi dari keimanan
                         (Aqidah).</p>
-                    <a href="mpAqidahAkhlak.html" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
+                    <a href="<?= base_url('mulai/aqidah_akhlak') ?>" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
                 </div>
 
                 <div id="Fiqih" class="tabcontent mt-3">
@@ -190,7 +190,7 @@
                     <p class="mapel" style="text-align: justify;">Fiqih adalah salah satu bidang ilmu dalam syariat
                         Islam yang secara khusus membahas persoalan hukum yang mengatur berbagai aspek kehidupan
                         manusia, baik kehidupan pribadi, bermasyarakat maupun kehidupan manusia dengan Allah </p>
-                    <a href="mpFiqih.html" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
+                    <a href="<?= base_url('mulai/fiqih') ?>" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
                 </div>
 
                 <div id="Tajwid" class="tabcontent mt-3">
@@ -199,7 +199,7 @@
                     <p class="mapel" style="text-align: justify;">Tajwid merupakan turunan dari ilmu qiraat, atau ilmu
                         membaca Alquran. Dalam pengertian sederhana, tajwid berguna agar kita tidak salah dalam mengucap
                         huruf dalam Alquran.</p>
-                    <a href="mpTajwid.html" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
+                    <a href="<?= base_url('mulai/tajwid') ?>" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
                 </div>
 
                 <!-- <div id="Tauhid" class="tabcontent mt-3">
@@ -214,7 +214,7 @@
                     <h3>Kisah Nabi</h3>
                     <p class="mapel" style="text-align: justify;">Kisah nabi adalah salah satu bidang ilmu yang secara
                         khusus membahas sejarah sejarah nabi dan rasul.</p>
-                    <a href="mpKisahNabi.html" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
+                    <a href="<?= base_url('mulai/kisah_nabi') ?>" class="btn btn-lg btn-success mt-3">Selengkapnya</a>
                 </div>
                 <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                     <option selected>Mata Pelajaran</option>
@@ -224,11 +224,11 @@
                     <option value="Kisah Nabi">Kisah Nabi</option>
                 </select> -->
                 <!-- <p class="lead">
-                    <a href="matapelajaran.html" class="btn btn-lg btn-success fw-bold border-white bg-white">Learn more</a>
+                    <a href="<?= base_url('mulai') ?>" class="btn btn-lg btn-success fw-bold border-white bg-white">Learn more</a>
                 </p> -->
             </div>
             <div class="col" id="kanan">
-                <img src="assets/Icon.png" alt="Al-Quran" style="width:500px" id="AlQuran">
+                <img src="<?= base_url('assets/') ?>Icon.png" alt="Al-Quran" style="width:500px" id="AlQuran">
             </div>
         </div>
     </main>

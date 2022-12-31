@@ -92,7 +92,7 @@
                     </p>
                 </div>
                 <div class="col-2 mt-5" style="top: 0;right: 0; position:absolute; margin-right: 90px;">
-                    <img src="assets/3D text/3DTeks(KNabi).png" alt="Kisah Nabi" style="width:300px">
+                    <img src="<?= base_url('assets/') ?>/3D text/3DTeks(KNabi).png" alt="Kisah Nabi" style="width:300px">
                 </div>
             </div>
             <h3 class="green"><b>Nabi Idris</b></h3>
@@ -305,7 +305,7 @@
             </p> -->
         </div>
         <div class="col" style="text-align: right;">
-            <a class="btn btn-success me-2" role="button" href="matapelajaran.html"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+            <a class="btn btn-success me-2" role="button" href="<?= base_url('mulai') ?>"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
             <button class="btn btn-success me-2" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i> Ke Atas</button>
         </div>
     </main>
