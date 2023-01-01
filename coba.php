@@ -129,20 +129,18 @@ if (mysqli_connect("localhost", "root", "", "mengaji")) {
     </ul>
     <!-- Script komentar dan cari -->
     <script>
-        function cari() {
-            const text1 = document.getElementById('text1').textContent;
-            const text2 = document.getElementById('text2').textContent;
-            const element = [text1, text2];
-            // document.write(element[0]);
-            const input = document.getElementById('dicari').value.toLowerCase();
-            const data_filtered = element.slice(0);
+        document.getElementById('dicari').addEventListener('keyup', event => {
+            if (event.keyCode == 13) {
+                cari();
+            }
+        });
 
+        function cari() {
+            const input = document.getElementById('dicari').value.toLowerCase();
             if (input != "") {
                 const regExp = new RegExp(input, "gi");
-                if (document.getElementById('text1').innerHTML = text1.replace(regExp, "<mark>$&</mark>")) {
-                    for (let i = '2'; i < 6; i++) {
-                        document.getElementById('text' + i).innerHTML = document.getElementById('text' + i).textContent.replace(regExp, "<mark>$&</mark>")
-                    }
+                for (let i = '1'; i < 6; i++) {
+                    document.getElementById('text' + i).innerHTML = document.getElementById('text' + i).textContent.replace(regExp, "<mark>$&</mark>")
                 }
             }
         }

@@ -65,15 +65,26 @@
         </ul>
     </nav>
     <main class="container-fluid px-4 p-3 mt-5 tentang1" id="konten">
+        <!-- search btn  -->
+        <div class="me-auto" style="width: 300px; ">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="dicari" placeholder="Cari" width="100px">
+                <button class="btn btn-outline-success" type="button" id="btn-cari" onclick="cari()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         <div>
             <div class="row">
                 <div class="col-10">
-                    <h3 class="green"><b>Iman</b></h3>
-                    <h4 style="font-size: 15px;">Pengertian :</h4>
+                    <h3 class="green" id="text1"><b>Iman</b></h3>
+                    <h4 style="font-size: 15px;" id="text2">Pengertian :</h4>
                     <p class="margin-left" style="text-align: justify;">
                     <ol class="margin-left-list" type="a">
-                        <li>Secara bahasa : percaya atau yakin.</li>
-                        <li>Secara istilah : mengucapkan dengan lisan membenarkan dengan hati dan melakukan dengan perbuatan.</li>
+                        <li id="text3">Secara bahasa : percaya atau yakin.</li>
+                        <li id="text4">Secara istilah : mengucapkan dengan lisan membenarkan dengan hati dan melakukan dengan perbuatan.</li>
                     </ol>
                     </p>
                 </div>
@@ -81,42 +92,42 @@
                     <img src="<?= base_url('assets/') ?>/3D text/3DTeks(Aqidah).png" alt="Aqidah" style="width:350px">
                 </div>
             </div>
-            <h4 style="font-size: 15px;">Rukun Iman :</h4>
-            <p class="margin-left" style="text-align: justify;">Rukun Iman ialah perkara-perkara yang apabila perkara-perkara ini telah dipercayai oleh seseorang maka ia dianggap telah beriman.</p>
-            <p class="margin-left" style="text-align: justify;">Rukun Iman ada 6, yaitu :</p>
-            <p class="margin-left" style="text-align: justify;">
+            <h4 style="font-size: 15px;" id="text5">Rukun Iman :</h4>
+            <p class="margin-left" style="text-align: justify;" id="text6">Rukun Iman ialah perkara-perkara yang apabila perkara-perkara ini telah dipercayai oleh seseorang maka ia dianggap telah beriman.</p>
+            <p class="margin-left" style="text-align: justify;" id="text7">Rukun Iman ada 6, yaitu :</p>
+            <p class="margin-left" style="text-align: justify;" id="text8">
             <ol class="margin-left-list" type="1">
-                <li>Iman kepada Allah</li>
-                <li>Iman Kepada Malaikat Allah</li>
-                <li>Iman Kepada Kitab-Kitab Allah</li>
-                <li>Iman Kepada Nabi dan Rasul Allah</li>
-                <li>Iman Kepada Hari Kiamat</li>
-                <li>Iman Kepada Qadha dan Qadar (Ketentuan Baik dan buruk)</li>
+                <li id="text9">Iman kepada Allah</li>
+                <li id="text10">Iman Kepada Malaikat Allah</li>
+                <li id="text11">Iman Kepada Kitab-Kitab Allah</li>
+                <li id="text12">Iman Kepada Nabi dan Rasul Allah</li>
+                <li id="text13">Iman Kepada Hari Kiamat</li>
+                <li id="text14">Iman Kepada Qadha dan Qadar (Ketentuan Baik dan buruk)</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Ada beberapa hal yang dapat menghilangkan iman, yaitu :</p>
+            <p class="margin-left" style="text-align: justify;" id="text15">Ada beberapa hal yang dapat menghilangkan iman, yaitu :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="1">
-                <li>Menyembah sesuatu selain Allah SWT.</li>
-                <li>Menghina tanda-tanda keagungan agama.</li>
-                <li>Merendahkan syiar-syiar agama.</li>
-                <li>Menghina Al-Qur'an.</li>
-                <li>Mengucap kata-kata kufur.</li>
-                <li>Menghalalkan hal-hal yang diharamkan oleh syarak dengan sengaja menentang.</li>
+                <li id="text16">Menyembah sesuatu selain Allah SWT.</li>
+                <li id="text17">Menghina tanda-tanda keagungan agama.</li>
+                <li id="text18">Merendahkan syiar-syiar agama.</li>
+                <li id="text19">Menghina Al-Qur'an.</li>
+                <li id="text20">Mengucap kata-kata kufur.</li>
+                <li id="text21">Menghalalkan hal-hal yang diharamkan oleh syarak dengan sengaja menentang.</li>
             </ol>
             </p>
-            <h3 class="green"><b>Iman Kepada Allah SWT</b></h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
-            <p class="margin-left" style="text-align: justify;">Iman kepada Allah SWT adalah meyakini bahwa Allah SWT. itu memang benar-benar ada yang mempunyai wujud yang tidak sama dengan wujud makhluk-Nya.</p>
+            <h3 class="green"><b id="text22">Iman Kepada Allah SWT</b></h3>
+            <h4 style="font-size: 15px;" id="text23">Pengertian :</h4>
+            <p class="margin-left" style="text-align: justify;" id="text24">Iman kepada Allah SWT adalah meyakini bahwa Allah SWT. itu memang benar-benar ada yang mempunyai wujud yang tidak sama dengan wujud makhluk-Nya.</p>
             <p class="margin-left" style="text-align: justify;">
             <ul style="list-style-type:none;">
-                <li>Yang mempunyai kekuasaan yang tidak sama dengan kekuasaan makhluk-Nya.</li>
-                <li>Yang mempunyai pengetahuan yang tidak sama dengan pengetahuan makhluk-Nya.</li>
-                <li>Yang mempunyai kehendak yang tidak sama dengan kehendak makhluk-Nya.</li>
-                <li>Yang mempunyai penglihatan yang tidak sama dengan penglihatan makhluk-Nya.</li>
-                <li>Yang mempunyai pendengaran yang tidak sama dengan pendengaran makhluk-Nya.</li>
-                <li>Yang mempunyai kasih sayang yang juga tidak sama dengan kasih sayang makhluk-Nya.</li>
-                <li>Dan masih banyak lagi sifat-sifat Allah SWT yang maha Agung yang tidak sama dengan makhluk-Nya.</li>
+                <li id="text25">Yang mempunyai kekuasaan yang tidak sama dengan kekuasaan makhluk-Nya.</li>
+                <li id="text26">Yang mempunyai pengetahuan yang tidak sama dengan pengetahuan makhluk-Nya.</li>
+                <li id="text27">Yang mempunyai kehendak yang tidak sama dengan kehendak makhluk-Nya.</li>
+                <li id="text28">Yang mempunyai penglihatan yang tidak sama dengan penglihatan makhluk-Nya.</li>
+                <li id="text29">Yang mempunyai pendengaran yang tidak sama dengan pendengaran makhluk-Nya.</li>
+                <li id="text30">Yang mempunyai kasih sayang yang juga tidak sama dengan kasih sayang makhluk-Nya.</li>
+                <li id="text31">Dan masih banyak lagi sifat-sifat Allah SWT yang maha Agung yang tidak sama dengan makhluk-Nya.</li>
             </ul>
             </p>
             <!-- <h4 style="font-size: 15px;">Sifat Jaiz</h4> -->
@@ -126,203 +137,203 @@
                 Contohnya, harus bagi Allah menciptakan langit, bumi, matahari dan yang lain dan harus juga bagi Allah untuk tidak menciptakannya. 
                 Tidak wajib bagi Allah membuat sesuatu seperti menghidupkan atau mematikan bahkan itu harus pada hak Allah.</p>
             <br> -->
-            <h4 style="font-size: 15px;">Asmaul Husna</h4>
-            <p class="margin-left" style="text-align: justify;">Secara bahasa asma'ul husna terdiri dari dua kata, yaitu Asma yang berarti nama, dan Husna yang berarti baik atau indah. Jadi, Asmaul Husna adalah nama-nama Allah yang baik dan indah.</p>
-            <p class="margin-left" style="text-align: justify;">Asmaul Husna berjumlah 99, yaitu :</p>
+            <h4 style="font-size: 15px;" id="text32">Asmaul Husna</h4>
+            <p class="margin-left" style="text-align: justify;" id="text33">Secara bahasa asma'ul husna terdiri dari dua kata, yaitu Asma yang berarti nama, dan Husna yang berarti baik atau indah. Jadi, Asmaul Husna adalah nama-nama Allah yang baik dan indah.</p>
+            <p class="margin-left" style="text-align: justify;" id="text34">Asmaul Husna berjumlah 99, yaitu :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="1">
-                <li>Ar-Rahman, artinya Yang Maha Pemurah</li>
-                <li>Ar-Rahiim, artinya Yang Maha Pengasih</li>
-                <li>Al-Malik, artinya Maha Raja</li>
-                <li>Al-Qudduus, artinya Maha Suci</li>
-                <li>As-Salaam, artinya Maha Sejahtera</li>
-                <li>Al-Mu'min, artinya Yang Maha Terpercaya</li>
-                <li>Al-Muhaimin, artinya Yang Maha Memelihara</li>
-                <li>Al-'Aziz, artinya Yang Maha Perkasa</li>
-                <li>Al-Jabbaar, artinya yang Kehendaknya Tidak Dapat Diingkari</li>
-                <li>Al-Mutakabbir, artinya Yang Memiliki Kebesaran</li>
-                <li>Al-Khaaliq, artinya Yang Maha Pencipta</li>
-                <li>Al-Baari', artinya Yang Mengadakan dari Tiada</li>
-                <li>Al-Mushawwir, artinya Yang Membuat Bentuk</li>
-                <li>Al-Ghaffaar, artinya Yang Maha pengampun </li>
-                <li>Al-Qahhaar, artinya Yang Maha Perkasa</li>
-                <li>Al-Wahhaab, artinya Yang Maha Pemberi</li>
-                <li>Ar-Razzaq, artinya Yang Maha Pemberi Rezeki</li>
-                <li>Al-Fattaah, artinya Yang Maha Membuka (Hati)</li>
-                <li>Al-'Alim, artinya Yang Maha Mengetahui</li>
-                <li>Al-Qaabidh, artinya Yang Maha Pengendali</li>
-                <li>Al-Baasith, artinya Yang Maha Melapangkan</li>
-                <li>Al-Khaafidh, artinya Yang Merendahkan</li>
-                <li>Ar-Raafi', artinya Yang Meninggikan</li>
-                <li>Al-Mu'izz, artinya Yang Maha Terhormat</li>
-                <li>Al-Mudzdzill, artinya Yang Maha Menghinakan</li>
-                <li>As-Samii', artinya Yang Maha Mendengar</li>
-                <li>Al-Bashiir, artinya Yang maha Melihat</li>
-                <li>Al-Hakam, artinya Yang Memutuskan Hukum</li>
-                <li>Al-'Adl, artinya Yang Maha Adil</li>
-                <li>Al-Lathiif, artinya Yang Maha Lembut</li>
-                <li>Al-Khabiir, artinya Yang Maha Mengetahui</li>
-                <li>Al-Haliim, artinya Yang Maha Penyantun</li>
-                <li>Al-'Azhiim, artinya Yang Maha Agung</li>
-                <li>Al-Ghafuur, artinya Yang Maha Pengampun</li>
-                <li>Asy-Syakuur, artinya Yang Menerima Syukur</li>
-                <li>Al-'Aliyy, artinya Yang Maha Tinggi</li>
-                <li>Al-Kabiir, artinya Yang Maha Besar</li>
-                <li>Al-Hafiizh, artinya Yang Maha Penjaga</li>
-                <li>Al-Muqiit, artinya Yang Maha Pemelihara</li>
-                <li>Al-Hasiib, artinya Yang Maha Pembuat Perhitungan</li>
-                <li>Al-Jaliil, artinya Yang Maha Luhur</li>
-                <li>Al-Kariim, artinya Yang Maha Mulia</li>
-                <li>Ar-Raqiib, artinya Yang Maha Mengawasi</li>
-                <li>Al-Mujiib, artinya Yang Maha Mengabulkan</li>
-                <li>Al-Waasi', artinya Yang Maha Luas</li>
-                <li>Al-Hakiim, artinya Yang Maha Bijaksana</li>
-                <li>Al-Waduud, artinya Yang Maha Mengasihi</li>
-                <li>Al-Majiid, artinya Yang Maha Mulia</li>
-                <li>Al-Baa'its, artinya Yang Membangkitkan</li>
-                <li>Asy-Syahiid, artinya Yang Maha Menyaksikan</li>
-                <li>Al-Haqq, artinya Yang Maha Benar</li>
-                <li>Al-Wakiil, artinya Yang Maha Pemelihara</li>
-                <li>Al-Qawiyy, artinya Yang Maha Kuat</li>
-                <li> Al-Matiin, artinya Yang Maha Kokoh</li>
-                <li>Al-Waliyy, artinya Yang Maha Melindungi</li>
-                <li>Al-Hamiid, artinya Yang Maha Terpuji</li>
-                <li>Al-Muhshi, artinya Yang Maha Menghitung</li>
-                <li>Al-Mubdi', artinya Yang Maha Memulai</li>
-                <li>Al-Mu'id, artinya Yang Maha Mengembalikan</li>
-                <li>Al-Muhyi, artinya Yang Maha Menghidupkan</li>
-                <li>Al-Mumiit, artinya Yang Maha Mematikan</li>
-                <li> Al-Hayy, artinya Yang Maha Hidup</li>
-                <li>Al-Qayyuum, artinya Yang Maha Mandiri</li>
-                <li>Al-Waajid, artinya Yang Maha Menemukan</li>
-                <li>Al-Maajid, artinya Yang Maha Mulia</li>
-                <li>Al-Waahid, artinya Yang Maha Tunggal</li>
-                <li>Al-Ahad, artinya Yang Maha Esa</li>
-                <li>Ash-Shamad, artinya Yang Maha Dibutuhkan</li>
-                <li>Al-Qaadir, artinya Yang Maha Kuat</li>
-                <li>Al-Muqtadir, artinya Yang Maha Berkuasa</li>
-                <li>Al-Muqqadim, artinya Yang Maha Mendahulukan</li>
-                <li>Al-Mu'akhkhir, artinya Yang Maha Mengakhirkan</li>
-                <li>Al-Awwal, artinya Yang Maha Permulaan</li>
-                <li>Al-Aakhir, artinya Yang Maha Akhir</li>
-                <li>Azh-Zhaahir, artinya Yang Maha Nyata</li>
-                <li>Al-Baathin, artinya Yang Maha Ghaib</li>
-                <li>Al-Waalii, artinya Yang Maha Memerintah</li>
-                <li>Al-Muta'aalii, artinya Yang Maha Tinggi</li>
-                <li>Al-Barr, artinya Yang Maha Dermawan</li>
-                <li>At-Tawwaab, artinya Yang Maha Penerima Taubat</li>
-                <li>Al-Muntaqim, artinya Yang Maha Penyiksa</li>
-                <li>Al-'Afuww, artinya Yang Maha Pemaaf</li>
-                <li>Ar-Ra'uuf, artinya Yang Maha Pengasih</li>
-                <li>Maalikal Mulk, artinya Yang Mempunya Kerajaan</li>
-                <li>Zuljalaali wal 'Ikram, artinya Yang Maha Memiliki Kebesaran serta Kemuliaan</li>
-                <li>Al-Muqsith, artinya Yang Maha Adil</li>
-                <li>Al-Jaami', artinya Yang Maha Pengumpul</li>
-                <li>Al-Ghaniyy, artinya Yang Maha kaya</li>
-                <li>Al-Mughnii, artinya Yang Maha Mencukupi</li>
-                <li>Al-Maani', artinya Yang Maha Mencegah</li>
-                <li>Adh-Dhaarr, artinya Yang Maha Pemberi Derita</li>
-                <li>An-Naafi', artinya Yang Maha Pemberi Manfaat</li>
-                <li>An-Nuur, artinya Yang Maha Bercahaya</li>
-                <li>Al-Haadii, artinya Yang Maha Pemberi Petunjuk</li>
-                <li>Al-Badii', artinya Yang Maha Pencipta</li>
-                <li>Al-Baaqii, artinya Yang Maha Kekal</li>
-                <li>Al-Waarits, artinya Yang Maha Mewarisi</li>
-                <li>Ar-Rasyiid, artinya Yang Maha Pandai</li>
-                <li>Ash-Shabuur, artinya Yang Maha Sabar</li>
+                <li id="text35">Ar-Rahman, artinya Yang Maha Pemurah</li>
+                <li id="text36">Ar-Rahiim, artinya Yang Maha Pengasih</li>
+                <li id="text37">Al-Malik, artinya Maha Raja</li>
+                <li id="text38">Al-Qudduus, artinya Maha Suci</li>
+                <li id="text39">As-Salaam, artinya Maha Sejahtera</li>
+                <li id="text40">Al-Mu'min, artinya Yang Maha Terpercaya</li>
+                <li id="text41">Al-Muhaimin, artinya Yang Maha Memelihara</li>
+                <li id="text42">Al-'Aziz, artinya Yang Maha Perkasa</li>
+                <li id="text43">Al-Jabbaar, artinya yang Kehendaknya Tidak Dapat Diingkari</li>
+                <li id="text44">Al-Mutakabbir, artinya Yang Memiliki Kebesaran</li>
+                <li id="text45">Al-Khaaliq, artinya Yang Maha Pencipta</li>
+                <li id="text46">Al-Baari', artinya Yang Mengadakan dari Tiada</li>
+                <li id="text47">Al-Mushawwir, artinya Yang Membuat Bentuk</li>
+                <li id="text48">Al-Ghaffaar, artinya Yang Maha pengampun </li>
+                <li id="text49">Al-Qahhaar, artinya Yang Maha Perkasa</li>
+                <li id="text50">Al-Wahhaab, artinya Yang Maha Pemberi</li>
+                <li id="text51">Ar-Razzaq, artinya Yang Maha Pemberi Rezeki</li>
+                <li id="text52">Al-Fattaah, artinya Yang Maha Membuka (Hati)</li>
+                <li id="text53">Al-'Alim, artinya Yang Maha Mengetahui</li>
+                <li id="text54">Al-Qaabidh, artinya Yang Maha Pengendali</li>
+                <li id="text55">Al-Baasith, artinya Yang Maha Melapangkan</li>
+                <li id="text56">Al-Khaafidh, artinya Yang Merendahkan</li>
+                <li id="text57">Ar-Raafi', artinya Yang Meninggikan</li>
+                <li id="text58">Al-Mu'izz, artinya Yang Maha Terhormat</li>
+                <li id="text59">Al-Mudzdzill, artinya Yang Maha Menghinakan</li>
+                <li id="text60">As-Samii', artinya Yang Maha Mendengar</li>
+                <li id="text61">Al-Bashiir, artinya Yang maha Melihat</li>
+                <li id="text62">Al-Hakam, artinya Yang Memutuskan Hukum</li>
+                <li id="text63">Al-'Adl, artinya Yang Maha Adil</li>
+                <li id="text64">Al-Lathiif, artinya Yang Maha Lembut</li>
+                <li id="text65">Al-Khabiir, artinya Yang Maha Mengetahui</li>
+                <li id="text66">Al-Haliim, artinya Yang Maha Penyantun</li>
+                <li id="text67">Al-'Azhiim, artinya Yang Maha Agung</li>
+                <li id="text68">Al-Ghafuur, artinya Yang Maha Pengampun</li>
+                <li id="text69">Asy-Syakuur, artinya Yang Menerima Syukur</li>
+                <li id="text70">Al-'Aliyy, artinya Yang Maha Tinggi</li>
+                <li id="text71">Al-Kabiir, artinya Yang Maha Besar</li>
+                <li id="text72">Al-Hafiizh, artinya Yang Maha Penjaga</li>
+                <li id="text73">Al-Muqiit, artinya Yang Maha Pemelihara</li>
+                <li id="text74">Al-Hasiib, artinya Yang Maha Pembuat Perhitungan</li>
+                <li id="text75">Al-Jaliil, artinya Yang Maha Luhur</li>
+                <li id="text76">Al-Kariim, artinya Yang Maha Mulia</li>
+                <li id="text77">Ar-Raqiib, artinya Yang Maha Mengawasi</li>
+                <li id="text78">Al-Mujiib, artinya Yang Maha Mengabulkan</li>
+                <li id="text79">Al-Waasi', artinya Yang Maha Luas</li>
+                <li id="text80">Al-Hakiim, artinya Yang Maha Bijaksana</li>
+                <li id="text81">Al-Waduud, artinya Yang Maha Mengasihi</li>
+                <li id="text82">Al-Majiid, artinya Yang Maha Mulia</li>
+                <li id="text83">Al-Baa'its, artinya Yang Membangkitkan</li>
+                <li id="text84">Asy-Syahiid, artinya Yang Maha Menyaksikan</li>
+                <li id="text85">Al-Haqq, artinya Yang Maha Benar</li>
+                <li id="text86">Al-Wakiil, artinya Yang Maha Pemelihara</li>
+                <li id="text87">Al-Qawiyy, artinya Yang Maha Kuat</li>
+                <li id="text88"> Al-Matiin, artinya Yang Maha Kokoh</li>
+                <li id="text89">Al-Waliyy, artinya Yang Maha Melindungi</li>
+                <li id="text90">Al-Hamiid, artinya Yang Maha Terpuji</li>
+                <li id="text91">Al-Muhshi, artinya Yang Maha Menghitung</li>
+                <li id="text92">Al-Mubdi', artinya Yang Maha Memulai</li>
+                <li id="text93">Al-Mu'id, artinya Yang Maha Mengembalikan</li>
+                <li id="text94">Al-Muhyi, artinya Yang Maha Menghidupkan</li>
+                <li id="text95">Al-Mumiit, artinya Yang Maha Mematikan</li>
+                <li id="text96"> Al-Hayy, artinya Yang Maha Hidup</li>
+                <li id="text97">Al-Qayyuum, artinya Yang Maha Mandiri</li>
+                <li id="text98">Al-Waajid, artinya Yang Maha Menemukan</li>
+                <li id="text99">Al-Maajid, artinya Yang Maha Mulia</li>
+                <li id="text100">Al-Waahid, artinya Yang Maha Tunggal</li>
+                <li id="text101">Al-Ahad, artinya Yang Maha Esa</li>
+                <li id="text102">Ash-Shamad, artinya Yang Maha Dibutuhkan</li>
+                <li id="text103">Al-Qaadir, artinya Yang Maha Kuat</li>
+                <li id="text104">Al-Muqtadir, artinya Yang Maha Berkuasa</li>
+                <li id="text105">Al-Muqqadim, artinya Yang Maha Mendahulukan</li>
+                <li id="text106">Al-Mu'akhkhir, artinya Yang Maha Mengakhirkan</li>
+                <li id="text107">Al-Awwal, artinya Yang Maha Permulaan</li>
+                <li id="text108">Al-Aakhir, artinya Yang Maha Akhir</li>
+                <li id="text109">Azh-Zhaahir, artinya Yang Maha Nyata</li>
+                <li id="text110">Al-Baathin, artinya Yang Maha Ghaib</li>
+                <li id="text111">Al-Waalii, artinya Yang Maha Memerintah</li>
+                <li id="text112">Al-Muta'aalii, artinya Yang Maha Tinggi</li>
+                <li id="text113">Al-Barr, artinya Yang Maha Dermawan</li>
+                <li id="text114">At-Tawwaab, artinya Yang Maha Penerima Taubat</li>
+                <li id="text115">Al-Muntaqim, artinya Yang Maha Penyiksa</li>
+                <li id="text116">Al-'Afuww, artinya Yang Maha Pemaaf</li>
+                <li id="text117">Ar-Ra'uuf, artinya Yang Maha Pengasih</li>
+                <li id="text118">Maalikal Mulk, artinya Yang Mempunya Kerajaan</li>
+                <li id="text119">Zuljalaali wal 'Ikram, artinya Yang Maha Memiliki Kebesaran serta Kemuliaan</li>
+                <li id="text120">Al-Muqsith, artinya Yang Maha Adil</li>
+                <li id="text121">Al-Jaami', artinya Yang Maha Pengumpul</li>
+                <li id="text122">Al-Ghaniyy, artinya Yang Maha kaya</li>
+                <li id="text123">Al-Mughnii, artinya Yang Maha Mencukupi</li>
+                <li id="text124">Al-Maani', artinya Yang Maha Mencegah</li>
+                <li id="text125">Adh-Dhaarr, artinya Yang Maha Pemberi Derita</li>
+                <li id="text126">An-Naafi', artinya Yang Maha Pemberi Manfaat</li>
+                <li id="text127">An-Nuur, artinya Yang Maha Bercahaya</li>
+                <li id="text128">Al-Haadii, artinya Yang Maha Pemberi Petunjuk</li>
+                <li id="text129">Al-Badii', artinya Yang Maha Pencipta</li>
+                <li id="text130">Al-Baaqii, artinya Yang Maha Kekal</li>
+                <li id="text131">Al-Waarits, artinya Yang Maha Mewarisi</li>
+                <li id="text132">Ar-Rasyiid, artinya Yang Maha Pandai</li>
+                <li id="text133">Ash-Shabuur, artinya Yang Maha Sabar</li>
             </ol>
             </p>
-            <h3 class="green"><b>Iman Kepada Malaikat</b></h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
-            <p class="margin-left" style="text-align: justify;">Yaitu meyakini bahwa malaikat adalah makhluk yang diciptakan oleh Allah SWT dari Nur (cahaya), yang selalu patuh, tunduk dan taat pada perintah serta ketentuan Allah SWT.
+            <h3 class="green"><b id="text134">Iman Kepada Malaikat</b></h3>
+            <h4 style="font-size: 15px;" id="text135">Pengertian :</h4>
+            <p class="margin-left" style="text-align: justify;" id="text136">Yaitu meyakini bahwa malaikat adalah makhluk yang diciptakan oleh Allah SWT dari Nur (cahaya), yang selalu patuh, tunduk dan taat pada perintah serta ketentuan Allah SWT.
                 Malaikat merupakan makhluk Allah yang tidak mempunyai nafsu, melainkan hanya memiliki akal, sehingga mereka terpelihara dari kesalahan dan dosa. Malaikat tidak sama dengan manusia.
                 Sebab, malaikat tidak berjenis kelamin laki-laki atau perempuan. Hanya Allah SWT lah yang lebih mengetahui.
                 Dalam ajaran agama islam terdapat 10 malaikat yang wajib kita ketahui dari banyak malaikat yang ada di dunia dan akhirat yang tidak kita ketahui.</p>
             <br>
-            <h4 style="font-size: 15px;">10 Malaikat yang wajib di ketahui, yaitu :</h4>
+            <h4 style="font-size: 15px;" id="text137">10 Malaikat yang wajib di ketahui, yaitu :</h4>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="1">
-                <li>Malaikat Jibril tugasnya menyampaikan wahyu Allah kepada nabi dan rasul.</li>
-                <li>Malaikat Mikail tugasnya memberi rezeki pada manusia.</li>
-                <li>Malaikat Israfil tugasnya meniup terompet sangkakala di waktu hari kiamat.</li>
-                <li>Malaikat Izrail tugasnya mencabut nyawa.</li>
-                <li>Malaikat Munkar tugasnya menanyai mayat di alam kubur.</li>
-                <li>Malaikat Nakir tugasnya menanyai mayat di alam kubur.</li>
-                <li>Malaikat Raqib tugasnya mencatat segala amal baik manusia ketika hidup.</li>
-                <li>Malaikat Atid tugasnya mencatat segala perbuatan buruk manusia ketika hidup.</li>
-                <li>Malaikat Malik tugasnya menjaga pintu neraka.</li>
-                <li>Malaikat Ridwan tugasnya menjaga pintu surga.</li>
+                <li id="text138">Malaikat Jibril tugasnya menyampaikan wahyu Allah kepada nabi dan rasul.</li>
+                <li id="text139">Malaikat Mikail tugasnya memberi rezeki pada manusia.</li>
+                <li id="text140">Malaikat Israfil tugasnya meniup terompet sangkakala di waktu hari kiamat.</li>
+                <li id="text141">Malaikat Izrail tugasnya mencabut nyawa.</li>
+                <li id="text142">Malaikat Munkar tugasnya menanyai mayat di alam kubur.</li>
+                <li id="text143">Malaikat Nakir tugasnya menanyai mayat di alam kubur.</li>
+                <li id="text144">Malaikat Raqib tugasnya mencatat segala amal baik manusia ketika hidup.</li>
+                <li id="text145">Malaikat Atid tugasnya mencatat segala perbuatan buruk manusia ketika hidup.</li>
+                <li id="text146">Malaikat Malik tugasnya menjaga pintu neraka.</li>
+                <li id="text147">Malaikat Ridwan tugasnya menjaga pintu surga.</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Sifat-Sifat Dasar Malaikat, yaitu :</h4>
+            <h4 style="font-size: 15px;" id="text148">Sifat-Sifat Dasar Malaikat, yaitu :</h4>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="1">
-                <li>Selalu patuh pada segala perintah Allah dan selalu tidak melaksanakan apa yang dilarang Allah SWT.</li>
-                <li>Tidak sombong, tidak memiliki nafsu dan selalu bertasbih.</li>
-                <li>Dapat berubah wujud dan menjelma menjadi yang dia kehendaki.</li>
-                <li>Memohon ampunan bagi orang-orang yang beriman.</li>
-                <li>Ikut bahagia ketika seseorang mendapatkan Lailatul Qadar.</li>
+                <li id="text149">Selalu patuh pada segala perintah Allah dan selalu tidak melaksanakan apa yang dilarang Allah SWT.</li>
+                <li id="text150">Tidak sombong, tidak memiliki nafsu dan selalu bertasbih.</li>
+                <li id="text151">Dapat berubah wujud dan menjelma menjadi yang dia kehendaki.</li>
+                <li id="text152">Memohon ampunan bagi orang-orang yang beriman.</li>
+                <li id="text153">Ikut bahagia ketika seseorang mendapatkan Lailatul Qadar.</li>
             </ol>
             </p>
-            <h3 class="green"><b>Iman Kepada Kitab</b></h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
-            <p class="tentang" style="text-align: justify;">Iman kepada kitab-kitab Allah yaitu meyakini bahwa Allah SWT telah menurunkan kitab-kitab-Nya kepada Nabi dan rasul-Nya sebagai petunjuk untuk mencapai kebahagian dunia dan diakhirat nantinya.</p>
+            <h3 class="green"><b id="text154">Iman Kepada Kitab</b></h3>
+            <h4 style="font-size: 15px;" id="text155">Pengertian :</h4>
+            <p class="tentang" style="text-align: justify;" id="text156">Iman kepada kitab-kitab Allah yaitu meyakini bahwa Allah SWT telah menurunkan kitab-kitab-Nya kepada Nabi dan rasul-Nya sebagai petunjuk untuk mencapai kebahagian dunia dan diakhirat nantinya.</p>
             <br>
-            <h4 style="font-size: 15px;">Kitab-Kitab Allah SWT yang diturunkan kepada Nabi dan Rasul, yaitu :</h4>
+            <h4 style="font-size: 15px;" id="text157">Kitab-Kitab Allah SWT yang diturunkan kepada Nabi dan Rasul, yaitu :</h4>
             <p class="tentang" style="text-align: justify;">
             <ol class="margin-left-list" type="1">
-                <li>Kitab Taurat diturunkan kepada Nabi Musa AS berbahasa Ibrani.</li>
-                <li>Kitab Zabur diturunkan kepada Nabi Daud AS berbahasa Qibti.</li>
-                <li>Kitab Injil diturunkan kepada Nabi Isa AS berbahasa Suryani.</li>
-                <li>Kitab Al-Quran diturunkan kepada Nabi Muhammad SAW berbahasa Arab.</li>
+                <li id="text158">Kitab Taurat diturunkan kepada Nabi Musa AS berbahasa Ibrani.</li>
+                <li id="text159">Kitab Zabur diturunkan kepada Nabi Daud AS berbahasa Qibti.</li>
+                <li id="text160">Kitab Injil diturunkan kepada Nabi Isa AS berbahasa Suryani.</li>
+                <li id="text161">Kitab Al-Quran diturunkan kepada Nabi Muhammad SAW berbahasa Arab.</li>
             </ol>
             </p>
-            <h3 class="green"><b>Iman Kepada Nabi dan Rasul</b></h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
-            <p class="tentang" style="text-align: justify;">Iman kepada nabi dan rasul yaitu meyakini bahwa Allah SWT telah mengutus nabi dan rasul-Nya untuk membawa syiar agama dan membimbing umat pada jalan lurus dan diridhai Allah SWT,
+            <h3 class="green"><b id="text162">Iman Kepada Nabi dan Rasul</b></h3>
+            <h4 style="font-size: 15px;" id="text163">Pengertian :</h4>
+            <p class="tentang" style="text-align: justify;" id="text164">Iman kepada nabi dan rasul yaitu meyakini bahwa Allah SWT telah mengutus nabi dan rasul-Nya untuk membawa syiar agama dan membimbing umat pada jalan lurus dan diridhai Allah SWT,
                 dan juga sebagai pembawa berita gembira dan pemberi peringatan untuk kaumnya.</p>
             <br>
-            <h4 style="font-size: 15px;">Nama Nabi :</h4>
-            <p class="tentang" style="text-align: justify;">Dalam agama islam terdapat 25 nabi dan rasul yang wajib diketahui dan Nabi Muhammad SAW sebagai nabi yang terakhir untuk seluruh umat sepanjang masa.</p>
+            <h4 style="font-size: 15px;" id="text165">Nama Nabi :</h4>
+            <p class="tentang" style="text-align: justify;" id="text166">Dalam agama islam terdapat 25 nabi dan rasul yang wajib diketahui dan Nabi Muhammad SAW sebagai nabi yang terakhir untuk seluruh umat sepanjang masa.</p>
             <p class="tentang" style="text-align: justify;">
             <ol class="margin-left-list" type="1">
-                <li>Adam AS.</li>
-                <li>Idris AS.</li>
-                <li>Nuh AS.</li>
-                <li>Hud AS.</li>
-                <li>Shaleh AS.</li>
-                <li>Ibrahim AS.</li>
-                <li>Luth AS.</li>
-                <li>Ismail AS.</li>
-                <li>Ishak AS.</li>
-                <li>Yakub AS.</li>
-                <li>Yusuf AS.</li>
-                <li>Ayub AS.</li>
-                <li>Syu'aib AS.</li>
-                <li>Musa AS.</li>
-                <li>Harun AS.</li>
-                <li>Zulkifli AS.</li>
-                <li>Daud AS.</li>
-                <li>Sulaiman AS.</li>
-                <li>Ilyas AS.</li>
-                <li>Ilyasa AS.</li>
-                <li>Yunus AS.</li>
-                <li>Zakaria AS.</li>
-                <li>Yahya AS.</li>
-                <li>Isa AS.</li>
-                <li>Muhammad SAW.</li>
+                <li id="text167">Adam AS.</li>
+                <li id="text168">Idris AS.</li>
+                <li id="text169">Nuh AS.</li>
+                <li id="text170">Hud AS.</li>
+                <li id="text171">Shaleh AS.</li>
+                <li id="text172">Ibrahim AS.</li>
+                <li id="text173">Luth AS.</li>
+                <li id="text174">Ismail AS.</li>
+                <li id="text175">Ishak AS.</li>
+                <li id="text176">Yakub AS.</li>
+                <li id="text177">Yusuf AS.</li>
+                <li id="text178">Ayub AS.</li>
+                <li id="text179">Syu'aib AS.</li>
+                <li id="text180">Musa AS.</li>
+                <li id="text181">Harun AS.</li>
+                <li id="text182">Zulkifli AS.</li>
+                <li id="text183">Daud AS.</li>
+                <li id="text184">Sulaiman AS.</li>
+                <li id="text185">Ilyas AS.</li>
+                <li id="text186">Ilyasa AS.</li>
+                <li id="text187">Yunus AS.</li>
+                <li id="text188">Zakaria AS.</li>
+                <li id="text189">Yahya AS.</li>
+                <li id="text190">Isa AS.</li>
+                <li id="text191">Muhammad SAW.</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Ulul Azmi :</h4>
-            <p class="tentang" style="text-align: justify;">Diantara nabi dan rasul yang 25 itu ada 5 orang nabi dan rasul yang memiliki julukan Ulul Azmi.
+            <h4 style="font-size: 15px;" id="text192">Ulul Azmi :</h4>
+            <p class="tentang" style="text-align: justify;" id="text193">Diantara nabi dan rasul yang 25 itu ada 5 orang nabi dan rasul yang memiliki julukan Ulul Azmi.
                 Ulul Azmi itu adalah gelar yang diberikan kepada para rasul yang memiliki kedudukan tinggi (istimewa) karena ketabahan dan kesabaran yang luar biasa dalam menyebarkan agama.</p>
-            <p class="tentang" style="text-align: justify;">Para Rasul yang memiliki gelar Ulul Azmi, yaitu :
+            <p class="tentang" style="text-align: justify;" id="text194">Para Rasul yang memiliki gelar Ulul Azmi, yaitu :
             <ol class="margin-left-list" type="1">
-                <li>Nuh AS.</li>
-                <li>Ibrahim AS.</li>
-                <li>Musa AS.</li>
-                <li>Isa AS.</li>
-                <li>Muhammad SAW.</li>
+                <li id="text195">Nuh AS.</li>
+                <li id="text196">Ibrahim AS.</li>
+                <li id="text197">Musa AS.</li>
+                <li id="text198">Isa AS.</li>
+                <li id="text199">Muhammad SAW.</li>
             </ol>
             </p>
         </div>
@@ -397,6 +408,26 @@
         //     }
         // }
         // When the user clicks on the button, scroll to the top of the document
+        document.getElementById('dicari').addEventListener('keyup', event => {
+            if (event.keyCode == 13) {
+                cari();
+            }
+        });
+
+        function cari() {
+            const input = document.getElementById('dicari').value.toLowerCase();
+            if (input != "") {
+                const regExp = new RegExp(input, "gi");
+                for (let i = '1'; i < 200; i++) {
+                    document.getElementById('text' + i).innerHTML = document.getElementById('text' + i).textContent.replace(regExp, "<mark id=mark>$&</mark>")
+                }
+                if (document.getElementById("mark")) {
+                    document.location.href = "<?= base_url('mulai/aqidah_akhlak/') ?>#mark";
+                }
+            }
+        }
+
+
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
