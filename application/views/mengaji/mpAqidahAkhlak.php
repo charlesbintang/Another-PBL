@@ -1,3 +1,6 @@
+<?php
+date_default_timezone_set("Asia/Jakarta");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -359,9 +362,50 @@
             </p>
         </div>
         <div class="col" style="text-align: right;">
+            <!-- Button trigger modal -->
+            <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="beri komentar"><i class="fa-regular fa-comment"></i> Komentar</button>
             <a class="btn btn-success me-2" role="button" href="<?= base_url('mulai') ?>"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
             <button class="btn btn-success me-2" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i> Ke Atas</button>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="margin-right: 0px;">
+                    <div class="modal-header" style="margin-right: 0px;">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Komentar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="margin-right: 0px;">
+                        <form id="komen" action="<?= base_url('mulai/tambahKomentarAqidah') ?>" method="POST">
+                            <div class="mb-3" style="margin-right: 0px;">
+                                <label for="Nama" class="col-form-label">Nama:</label>
+                                <input type="text" class="form-control" id="Nama" name="nama" placeholder="Isi nama kamu ya!" required>
+                            </div>
+                            <div class="mb-3" style="margin-right: 0px;">
+                                <label for="Komentar" class="col-form-label">Komentar:</label>
+                                <textarea class="form-control" id="Komentar" name="komentar" required></textarea>
+                            </div>
+                            <input type="hidden" name="tanggalWaktu" value="<?= date('d-m-Y') . ' ' . date('H:i:s') ?>">
+                            <input type="hidden" name="halaman" value="AqidahAkhlak">
+                    </div>
+                    <div class="modal-footer" style="margin-right: 0px;">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Kirim</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolom Komentar -->
+
+
+
+
+
+
+
         <!-- <div class="bagian mt-50">
             <h3><b>Klien</b></h3>
             <div class="name">
@@ -440,6 +484,10 @@
             }
         });
 
+        function kirKomen() {
+            document.getElementById("komen").submit();
+        }
+
         function cari() {
             const input = document.getElementById('dicari').value.toLowerCase();
             if (input != "") {
@@ -452,7 +500,6 @@
                 }
             }
         }
-
 
         function topFunction() {
             document.body.scrollTop = 0;
