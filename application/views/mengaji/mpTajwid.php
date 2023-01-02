@@ -86,22 +86,32 @@
         </ul>
     </nav>
     <main class="container-fluid px-4 p-3 mt-5 tentang1" id="konten">
+        <div class="me-auto disabled" style="width: 300px;">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="dicari" placeholder="Cari" width="100px" disabled>
+                <button class="btn btn-outline-success" type="button" id="btn-cari" onclick="cari()" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         <div>
             <div class="row">
                 <div class="col-10">
-                    <h3 class="green"><b>Idzhar</b></h3>
-                    <p class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf idzhar, maka cara membacanya yaitu jelas.
+                    <h3 class="green"><b id="text1">Idzhar</b></h3>
+                    <p id="text2" class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf idzhar, maka cara membacanya yaitu jelas.
                         Huruf-huruf idzhar ini dibaca jelas karena tempat keluarnya huruf-huruf tersebut adalah mulut, ada pada kerongkongan atau tenggorokan.</p>
-                    <p class="margin-left" style="text-align: justify;">Huruf-huruf idzhar : ا ع غ ح خ ها</p>
-                    <p class="margin-left" style="text-align: justify;">Contoh : </p>
-                    <p class="margin-left" style="text-align: justify;">
+                    <p id="text3" class="margin-left" style="text-align: justify;">Huruf-huruf idzhar : ا ع غ ح خ ها</p>
+                    <p id="text4" class="margin-left" style="text-align: justify;">Contoh : </p>
+                    <p id="text5" class="margin-left" style="text-align: justify;">
                     <ol class="margin-left-list" type="a">
-                        <li>مِنْ آَلِ فِرْعَوْنَ Nun mati bertemu dengan أ</li>
-                        <li>فَكُلُوا مِنْهَا حَيْثُ Nun mati bertemu dengan هـ</li>
-                        <li>بِغَافِلٍ عَمَّا تَعْمَلُونَ Nun mati bertemu dengan ع</li>
-                        <li>مِنْ غَفُورٍ رَحِيم Nun mati bertemu dengan غ</li>
-                        <li>أَنَّ اللَّهَ عَزِيزٌ حَكِيمٌ Tanwin bertemu dengan ح</li>
-                        <liكُونُوا قِرَدَةً خَاسِئِينَ Tanwin bertemu dengan خ</li>
+                        <li id="text6">مِنْ آَلِ فِرْعَوْنَ Nun mati bertemu dengan أ</li>
+                        <li id="text7">فَكُلُوا مِنْهَا حَيْثُ Nun mati bertemu dengan هـ</li>
+                        <li id="text8">بِغَافِلٍ عَمَّا تَعْمَلُونَ Nun mati bertemu dengan ع</li>
+                        <li id="text9">مِنْ غَفُورٍ رَحِيم Nun mati bertemu dengan غ</li>
+                        <li id="text10">أَنَّ اللَّهَ عَزِيزٌ حَكِيمٌ Tanwin bertemu dengan ح</li>
+                        <li id="text11">كُونُوا قِرَدَةً خَاسِئِينَ Tanwin bertemu dengan خ</li>
                     </ol>
                     </p>
                 </div>
@@ -109,53 +119,53 @@
                     <img src="<?= base_url('assets/') ?>/3D text/3DTeks(Tajwid).png" alt="Tajwid" style="width:350px">
                 </div>
             </div>
-            <h3 class="green"><b>Idgham Bigunnah</b></h3>
-            <p class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf idgham bigunnah, maka dibacanya dengan mendengung.
+            <h3 class="green"><b id="text12">Idgham Bigunnah</b></h3>
+            <p id="text13" class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf idgham bigunnah, maka dibacanya dengan mendengung.
                 Idgham artinya memasukkan, dan bigunnah artinya mendengung. Jadi cara membacanya dengan ditasydidkan ke dalam salah satu huruf idgham dengan suara yang mendengung.</p>
-            <p class="margin-left" style="text-align: justify;">Huruf-huruf idgham bigunnah : ي ن م و</p>
-            <p class="margin-left" style="text-align: justify;">Contoh : </p>
+            <p id="text14" class="margin-left" style="text-align: justify;">Huruf-huruf idgham bigunnah : ي ن م و</p>
+            <p id="text15" class="margin-left" style="text-align: justify;">Contoh : </p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>مِنْ قَبْلِ أَنْ يَتَمَاسَّا Nun mati bertemu dengan ي</li>
-                <li>إِلَّا سَاعَةً مِنْ نَهَارٍ Nun mati bertemu dengan ن</li>
-                <li>وَأَنْفِقُوا مِنْ مَا رَزَقْنَاكُمْ Nun mati bertemu dengan م</li>
-                <li>مِنْ دُونِهِ مِنْ وَالٍ Nun mati bertemu dengan و</li>
+                <li id="text16">مِنْ قَبْلِ أَنْ يَتَمَاسَّا Nun mati bertemu dengan ي</li>
+                <li id="text17">إِلَّا سَاعَةً مِنْ نَهَارٍ Nun mati bertemu dengan ن</li>
+                <li id="text18">وَأَنْفِقُوا مِنْ مَا رَزَقْنَاكُمْ Nun mati bertemu dengan م</li>
+                <li id="text19">مِنْ دُونِهِ مِنْ وَالٍ Nun mati bertemu dengan و</li>
             </ol>
             </p>
-            <h3 class="green"><b>Idgham Bilagunnah</b></h3>
-            <p class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf idgham bilagunnah, maka dibacanya dengan dimasukkan namun tidak berdengung.
+            <h3 class="green"><b id="text20">Idgham Bilagunnah</b></h3>
+            <p id="text21" class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf idgham bilagunnah, maka dibacanya dengan dimasukkan namun tidak berdengung.
                 Idgham artinya memasukkan, dan bilagunnah artinya tidak mendengung. Jadi cara membacanya dengan ditasydidkan ke dalam salah satu huruf idham dengan suara yang tidak mendengung.</p>
-            <p class="margin-left" style="text-align: justify;">Huruf-huruf idgham bigunnah : ل ر</p>
-            <p class="margin-left" style="text-align: justify;">Contoh : </p>
+            <p id="text22" class="margin-left" style="text-align: justify;">Huruf-huruf idgham bigunnah : ل ر</p>
+            <p id="text23" class="margin-left" style="text-align: justify;">Contoh : </p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>فَضْلًا مِنْ رَبِّكَ Nun Mati bertemu dengan ر</li>
-                <li>قَالَ لَمْ أَكُنْ لِأَسْجُدَ Nun Mati bertemu dengan ل</li>
+                <li id="text24">فَضْلًا مِنْ رَبِّكَ Nun Mati bertemu dengan ر</li>
+                <li id="text25">قَالَ لَمْ أَكُنْ لِأَسْجُدَ Nun Mati bertemu dengan ل</li>
             </ol>
             </p>
-            <h3 class="green"><b>Iqlab</b></h3>
-            <p class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf iqlab maka dibacanya dengan ditukar.
+            <h3 class="green"><b id="text26">Iqlab</b></h3>
+            <p id="text27" class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf iqlab maka dibacanya dengan ditukar.
                 Iqlab artinya meleburkan atau lebih mudahnya cara membacanya dengan menukar huruf menjadi huruf mim.</p>
-            <p class="margin-left" style="text-align: justify;">Huruf iqlab : ب</p>
-            <p class="margin-left" style="text-align: justify;">Contoh : </p>
+            <p id="text28" class="margin-left" style="text-align: justify;">Huruf iqlab : ب</p>
+            <p id="text29" class="margin-left" style="text-align: justify;">Contoh : </p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>أَنْ تُنْبِتُوا Nun mati bertemu dengan ب</li>
-                <li>كُلُّ حِزْبٍ بِمَا Tanwin bertemu dengan ب</li>
+                <li id="text30">أَنْ تُنْبِتُوا Nun mati bertemu dengan ب</li>
+                <li id="text31">كُلُّ حِزْبٍ بِمَا Tanwin bertemu dengan ب</li>
             </ol>
             </p>
-            <h3 class="green"><b>Ikhfa</b></h3>
-            <p class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf ikhfa haqiqi, maka dibacanya dengan samar-samar.
+            <h3 class="green"><b id="text32">Ikhfa</b></h3>
+            <p id="text33" class="margin-left" style="text-align: justify;">Apabila nun mati atau tanwin bertemu dengan huruf-huruf ikhfa haqiqi, maka dibacanya dengan samar-samar.
                 Ikhfa artinya menyamar atau menyembunyikan sedangkan haqiqi artinya sungguh-sungguh. Jadi cara membacanya harus terang dengan adanya dengung.</p>
-            <p class="margin-left" style="text-align: justify;">Huruf-huruf Ikhfa Haqiqi : ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك</p>
-            <p class="margin-left" style="text-align: justify;">Contoh :</p>
+            <p id="text34" class="margin-left" style="text-align: justify;">Huruf-huruf Ikhfa Haqiqi : ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك</p>
+            <p id="text35" class="margin-left" style="text-align: justify;">Contoh :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>أَنْتُمْ Nun mati bertemu dengan ت</li>
-                <li>مَنْثُورًا Nun mati bertemu dengan ث</li>
-                <li>فَأَنْجَيْنَاه Nun mati bertemu dengan ج</li>
-                <li>عِنْدَهُ Nun mati bertemu dengan د</li>
-                <li>لِيُنْذِرَكُمْ Nun mati bertemu dengan ذ</li>
+                <li id="text36">أَنْتُمْ Nun mati bertemu dengan ت</li>
+                <li id="text37">مَنْثُورًا Nun mati bertemu dengan ث</li>
+                <li id="text38">فَأَنْجَيْنَاه Nun mati bertemu dengan ج</li>
+                <li id="text39">عِنْدَهُ Nun mati bertemu dengan د</li>
+                <li id="text40">لِيُنْذِرَكُمْ Nun mati bertemu dengan ذ</li>
             </ol>
             </p>
         </div>
@@ -196,6 +206,30 @@
         //     }
         // }
         // When the user clicks on the button, scroll to the top of the document
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("dicari").removeAttribute("disabled");
+            document.getElementById("btn-cari").removeAttribute("disabled");
+        });
+
+        document.getElementById('dicari').addEventListener('keyup', event => {
+            if (event.keyCode == 13) {
+                cari();
+            }
+        });
+
+        function cari() {
+            const input = document.getElementById('dicari').value.toLowerCase();
+            if (input != "") {
+                const regExp = new RegExp(input, "gi");
+                for (let i = '1'; i < 41; i++) {
+                    document.getElementById('text' + i).innerHTML = document.getElementById('text' + i).textContent.replace(regExp, "<mark id=mark>$&</mark>")
+                }
+                if (document.getElementById("mark")) {
+                    document.location.href = "<?= base_url('mulai/tajwid') ?>#mark";
+                }
+            }
+        }
+
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
