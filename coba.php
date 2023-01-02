@@ -36,7 +36,7 @@ if (mysqli_connect("localhost", "root", "", "mengaji")) {
 
     <div class="ms-auto" style="width: 150px; ">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="dicari" placeholder="Cari" width="100px">
+            <input type="text" class="form-control" id="dicari" placeholder="kata kunci" width="100px">
             <button class="btn btn-outline-success" type="button" id="btn-cari" onclick="cari()">Cari</button>
         </div>
     </div>
