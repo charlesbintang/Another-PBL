@@ -422,7 +422,7 @@
                     document.getElementById('text' + i).innerHTML = document.getElementById('text' + i).textContent.replace(regExp, "<mark id=mark>$&</mark>")
                 }
                 if (document.getElementById("mark")) {
-                    document.location.href = "<?= base_url('mulai/aqidah_akhlak/') ?>#mark";
+                    document.location.href = "<?= base_url('mulai/aqidah_akhlak') ?>#mark";
                 }
             }
         }
