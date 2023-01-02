@@ -65,25 +65,35 @@
         </ul>
     </nav>
     <main class="container-fluid px-4 p-3 mt-5 tentang1" id="konten">
+        <div class="me-auto disabled" style="width: 300px;">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="dicari" placeholder="Cari" width="100px" disabled>
+                <button class="btn btn-outline-success" type="button" id="btn-cari" onclick="cari()" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         <div>
             <div class="row">
                 <div class="col-10">
-                    <h3 class="green"><b>Islam, Iman, Ikhlas</b></h3>
-                    <h3>Islam</h3>
-                    <h4 style="font-size: 15px;">Pengertian :</h4>
-                    <p class="margin-left" style="text-align: justify;">Islam yaitu kamu mengakui bahwa tiada Tuhan selain Allah.
+                    <h3 class="green"><b id="text1">Islam, Iman, Ikhlas</b></h3>
+                    <h3 id="text2">Islam</h3>
+                    <h4 style="font-size: 15px;" id="text3">Pengertian :</h4>
+                    <p class="margin-left" style="text-align: justify;" id="text4">Islam yaitu kamu mengakui bahwa tiada Tuhan selain Allah.
                         Dan Muhammad adalah utusan Allah, mendirikan shalat, memberikan zakat, berpuasa dibulan Ramadhan dan beribadah haji ke Ka'bah
                         jika kamu sanggup melakukan perjalanan kesana.(H.R Muslim).</p>
                     <br>
-                    <p class="margin-left" style="text-align: justify;">Apa yang Rasulullah SAW sabdakan tersebut kita kenal dengan rukun Islam.
+                    <p id="text5" class="margin-left" style="text-align: justify;">Apa yang Rasulullah SAW sabdakan tersebut kita kenal dengan rukun Islam.
                         Kita baru bisa disebut muslim yang sempurna jika bisa mengerjakan kelima rukun Islam tersebut, yaitu:</p>
                     <p class="margin-left" style="text-align: justify;">
                     <ol class="margin-left-list" type="a">
-                        <li>Mengucapkan dua kalimat syahadat</li>
-                        <li>Mendirikan shalat lima waktu</li>
-                        <li>Membayar zakat</li>
-                        <li>Berpuasa dibulan Ramadhan</li>
-                        <li>Beribadah haji ke Baitullah bagi orang yang mampu</li>
+                        <li id="text6">Mengucapkan dua kalimat syahadat</li>
+                        <li id="text7">Mendirikan shalat lima waktu</li>
+                        <li id="text8">Membayar zakat</li>
+                        <li id="text9">Berpuasa dibulan Ramadhan</li>
+                        <li id="text10">Beribadah haji ke Baitullah bagi orang yang mampu</li>
                     </ol>
                     </p>
                 </div>
@@ -91,232 +101,232 @@
                     <img src="<?= base_url('assets/') ?>/3D text/3DTeks(Fiqih).png" alt="Fiqih" style="width:350px">
                 </div>
             </div>
-            <h3>Iman</h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
-            <p class="margin-left" style="text-align: justify;">Iman yaitu kamu beriman kepada Allah, para Malaikatnya,
+            <h3 id="text11">Iman</h3>
+            <h4 id="text12" style="font-size: 15px;">Pengertian :</h4>
+            <p id="text13" class="margin-left" style="text-align: justify;">Iman yaitu kamu beriman kepada Allah, para Malaikatnya,
                 Kitab-kitabnya, para Rosulnya, hari akhir, serta kamu beriman kepada takdir yang baik maupun yang buruk. (H.R Muslim).</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Apa yang Rasulullah sabdakan tersebut kita kenal dengan rukun Iman,
+            <p id="text14" class="margin-left" style="text-align: justify;">Apa yang Rasulullah sabdakan tersebut kita kenal dengan rukun Iman,
                 kita baru bisa disebut seorang mukmin yang sempurna jika mengimani ke enam rukun iman tersebut, yaitu:</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Beriman kepada Allah</li>
-                <li>Beriman kepada malaikat Allah</li>
-                <li>Beriman kepada kitab-kitab Allah</li>
-                <li>Beriman kepada Rasulullah</li>
-                <li>Beriman kepada hari akhir (hari kiamat)</li>
-                <li>Beriman kepada takdir Allah yang baik maupun yang buruk</li>
+                <li id="text15">Beriman kepada Allah</li>
+                <li id="text16">Beriman kepada malaikat Allah</li>
+                <li id="text17">Beriman kepada kitab-kitab Allah</li>
+                <li id="text18">Beriman kepada Rasulullah</li>
+                <li id="text19">Beriman kepada hari akhir (hari kiamat)</li>
+                <li id="text20">Beriman kepada takdir Allah yang baik maupun yang buruk</li>
             </ol>
             </p>
-            <h3>Ikhsan</h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
-            <p class="margin-left" style="text-align: justify;">Ikhsan yaitu engkau beribadah kepada Allah seakan-akan engkau melihatNya,
+            <h3 id="text21">Ikhsan</h3>
+            <h4 id="text22" style="font-size: 15px;">Pengertian :</h4>
+            <p id="text23" class="margin-left" style="text-align: justify;">Ikhsan yaitu engkau beribadah kepada Allah seakan-akan engkau melihatNya,
                 sekiranya engkau tidak melihatNya, ketahuilah bahwa Dia (Allah) senantiasa memperhatikanmu (HR.Muslim).</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Jika suatu saat gurumu menyuruhmu mengerjakan sesuatu,
+            <p id="text24" class="margin-left" style="text-align: justify;">Jika suatu saat gurumu menyuruhmu mengerjakan sesuatu,
                 lalu kamu pun mengerjakannya dengan disaksikan olehnya, sudah dipastikan kamu akan mengerjakannya dengan sungguh-sungguh.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Demikianlah, kesadaran bahwa kita sedang diawasi dan diperhatikan oleh orang yang menyuruh kita,
+            <p id="text25" class="margin-left" style="text-align: justify;">Demikianlah, kesadaran bahwa kita sedang diawasi dan diperhatikan oleh orang yang menyuruh kita,
                 akan berdampak pada kualitas pekerjaan kita, kesadaran seperti itulah tujuan dari Ikhsan. Yaitu, kesadaran bahwa Allah sedang mengawasi dan memperhatikan kita,
                 pasti kita shalat dengan sungguh-sungguh,</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Dengan kesadaran seperti itulah yang harus kita terapkan dalam kehidupan sehari-hari yaitu,
+            <p id="text26" class="margin-left" style="text-align: justify;">Dengan kesadaran seperti itulah yang harus kita terapkan dalam kehidupan sehari-hari yaitu,
                 kesadaran bahwa Allah selalu mem,perhatikan dan mengawasi kita, kesadaran seperti ini akan membuat kita terjaga dari buatan dosa.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Kata para ulama: “untuk membangkitkan pereasaan Ikhsan dalam hati kita,
+            <p id="text27" class="margin-left" style="text-align: justify;">Kata para ulama: “untuk membangkitkan pereasaan Ikhsan dalam hati kita,
                 sering-seringlah ucapkan tiga kalimat berikut:</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Allahu Ma'i (Allah bersertaku)</li>
-                <li>Allahu Nazhirun Ilayya (Allah selalu melihatku)</li>
-                <li>Allah Syahidun 'alayya (Allah selalu mengawasiku)</li>
+                <li id="text28">Allahu Ma'i (Allah bersertaku)</li>
+                <li id="text29">Allahu Nazhirun Ilayya (Allah selalu melihatku)</li>
+                <li id="text30">Allah Syahidun 'alayya (Allah selalu mengawasiku)</li>
             </ol>
             </p>
-            <h3 class="green"><b>Taharah</b></h3>
+            <h3 id="text31" class="green"><b>Taharah</b></h3>
             <!-- <h3>Islam</h3> -->
-            <h4 style="font-size: 15px;">Pengertian :</h4>
+            <h4 id="text32" style="font-size: 15px;">Pengertian :</h4>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Secara bahasa : Taharah artinya suci atau bersih.</li>
-                <li>Secara Istilah : Taharah adalah suci dari hadas dan najis.</li>
+                <li id="text33">Secara bahasa : Taharah artinya suci atau bersih.</li>
+                <li id="text34">Secara Istilah : Taharah adalah suci dari hadas dan najis.</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Macam-Macam Air</h4>
-            <p class="margin-left" style="text-align: justify;">Air yang suci dan dapat digunakan untuk bersuci: </p>
+            <h4 id="text35" style="font-size: 15px;">Macam-Macam Air</h4>
+            <p id="text36" class="margin-left" style="text-align: justify;">Air yang suci dan dapat digunakan untuk bersuci: </p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Air sumur</li>
-                <li>Air hujan</li>
-                <li>Air sungai</li>
-                <li>Air laut</li>
-                <li>Air salju atau air es bila telah mencair</li>
-                <li>Air embun</li>
-                <li>Air mata air</li>
+                <li id="text37">Air sumur</li>
+                <li id="text38">Air hujan</li>
+                <li id="text39">Air sungai</li>
+                <li id="text40">Air laut</li>
+                <li id="text41">Air salju atau air es bila telah mencair</li>
+                <li id="text42">Air embun</li>
+                <li id="text43">Air mata air</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Najis</h4>
-            <p class="margin-left" style="text-align: justify;">Setiap benda yang dianggap kotor oleh syari'at Islam,
+            <h4 id="text44" style="font-size: 15px;">Najis</h4>
+            <p id="text45" class="margin-left" style="text-align: justify;">Setiap benda yang dianggap kotor oleh syari'at Islam,
                 dan wajib dibersihkan, karena menjadi penghalang seseorang dalam beribadah pada Allah Swt.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Benda-benda yang termasuk najis, yaitu :</p>
+            <p id="text46" class="margin-left" style="text-align: justify;">Benda-benda yang termasuk najis, yaitu :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Bangkai</li>
-                <li>Darah</li>
-                <li>Nanah</li>
-                <li>Segala sesuatu yang keluar dari dubur, kecuali air mani</li>
-                <li>Anjing dan Babi</li>
+                <li id="text47">Bangkai</li>
+                <li id="text48">Darah</li>
+                <li id="text49">Nanah</li>
+                <li id="text50">Segala sesuatu yang keluar dari dubur, kecuali air mani</li>
+                <li id="text51">Anjing dan Babi</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Istinja</h4>
-            <p class="margin-left" style="text-align: justify;">Bembersihkan kubul dan dubur setelah buang air kecil atau buang air besar.
+            <h4 id="text52" style="font-size: 15px;">Istinja</h4>
+            <p id="text53" class="margin-left" style="text-align: justify;">Bembersihkan kubul dan dubur setelah buang air kecil atau buang air besar.
                 Istinja ini hukumnya adalah wajib. </p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Alat yang di pergunakan untuk istinja, yaitu :</p>
+            <p id="text54" class="margin-left" style="text-align: justify;">Alat yang di pergunakan untuk istinja, yaitu :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Air</li>
-                <li>Batu</li>
-                <li>Benda-benda yang kasar, kesat dan suci</li>
+                <li id="text55">Air</li>
+                <li id="text56">Batu</li>
+                <li id="text57">Benda-benda yang kasar, kesat dan suci</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Mandi</h4>
-            <p class="margin-left" style="text-align: justify;">Bagi orang yang akan shalat, tidak sah shalatnya jika masih mempunyai hadas besar.</p>
+            <h4 id="text58" style="font-size: 15px;">Mandi</h4>
+            <p id="text59" class="margin-left" style="text-align: justify;">Bagi orang yang akan shalat, tidak sah shalatnya jika masih mempunyai hadas besar.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Hadats besar adalah hadats yang disebabkan oleh persetubuhan, keluar mani, haid, nifas, dan melahirkan.
+            <p id="text60" class="margin-left" style="text-align: justify;">Hadats besar adalah hadats yang disebabkan oleh persetubuhan, keluar mani, haid, nifas, dan melahirkan.
                 Hadats besar dapat dihilangkan dengan mandi junub atau janabat (mandi wajib) hokum mandi ini adalah wajib.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Hal-hal yang menyebabkan seseorang wajib mandi :</p>
+            <p id="text61" class="margin-left" style="text-align: justify;">Hal-hal yang menyebabkan seseorang wajib mandi :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Bersetubuh</li>
-                <li>Keluar air mani</li>
-                <li>Meninggal (bukan mati syahid)</li>
-                <li>Selesai Haid (menstruasi)</li>
-                <li>Selesai Nifas</li>
-                <li>Wiladah</li>
+                <li id="text62">Bersetubuh</li>
+                <li id="text63">Keluar air mani</li>
+                <li id="text64">Meninggal (bukan mati syahid)</li>
+                <li id="text65">Selesai Haid (menstruasi)</li>
+                <li id="text66">Selesai Nifas</li>
+                <li id="text67">Wiladah</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Wudhu</h4>
+            <h4 id="text68" style="font-size: 15px;">Wudhu</h4>
             <!-- <h4 style="font-size: 15px;">Pengertian :</h4> -->
-            <p class="margin-left" style="text-align: justify;">Pengertian :
+            <p id="text69" class="margin-left" style="text-align: justify;">Pengertian :
             <ol class="margin-left-list" type="a">
-                <li>Secara bahasa : bersih dan indah.</li>
-                <li>Secara istilah : menggunakan air pada anggota badan tertentu dengan cara tertentu,
+                <li id="text70">Secara bahasa : bersih dan indah.</li>
+                <li id="text71">Secara istilah : menggunakan air pada anggota badan tertentu dengan cara tertentu,
                     yang dimulai dengan niat guna menghilangkan hadats kecil.</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Niat berwudhu :</p>
-            <p class="margin-left" style="text-align: justify;">"Aku niat berwudhu untuk menghilangkan hadats kecil, fardhu karena Allah ta'ala".</p>
+            <p id="text72" class="margin-left" style="text-align: justify;">Niat berwudhu :</p>
+            <p id="text73" class="margin-left" style="text-align: justify;">"Aku niat berwudhu untuk menghilangkan hadats kecil, fardhu karena Allah ta'ala".</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Syarat-syarat wudhu :</p>
+            <p id="text74" class="margin-left" style="text-align: justify;">Syarat-syarat wudhu :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Islam</li>
-                <li>Tamyiz (mampu untuk menentukan pilihan dan membedakan mana yang baik)</li>
-                <li>Bersih dari hadas besar</li>
-                <li>Menggunakan air suci dan mensucikan</li>
-                <li>Tidak ada benda yang menghalangi kulit</li>
+                <li id="text75">Islam</li>
+                <li id="text76">Tamyiz (mampu untuk menentukan pilihan dan membedakan mana yang baik)</li>
+                <li id="text77">Bersih dari hadas besar</li>
+                <li id="text78">Menggunakan air suci dan mensucikan</li>
+                <li id="text79">Tidak ada benda yang menghalangi kulit</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Rukun Wudhu</h4>
+            <h4 id="text80" style="font-size: 15px;">Rukun Wudhu</h4>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Niat</li>
-                <li>Membasuh muka membasuh kedua tangan sampai siku</li>
-                <li>Mengusap sebagian kepala</li>
-                <li>Membasuh kedua telapak kaki sampai mata kaki</li>
-                <li>Tertib (berurutan)</li>
+                <li id="text81">Niat</li>
+                <li id="text82">Membasuh muka membasuh kedua tangan sampai siku</li>
+                <li id="text83">Mengusap sebagian kepala</li>
+                <li id="text84">Membasuh kedua telapak kaki sampai mata kaki</li>
+                <li id="text85">Tertib (berurutan)</li>
             </ol>
             </p>
-            <h4 style="font-size: 15px;">Tayamum</h4>
+            <h4 id="text86" style="font-size: 15px;">Tayamum</h4>
             <!-- <h4>Pengertian :</h4> -->
-            <p class="margin-left" style="text-align: justify;">Tayamum adalah menyapu debu yang suci ke muka dan dua tangan hingga siku dengan beberapa syarat tertentu.</p>
+            <p id="text87" class="margin-left" style="text-align: justify;">Tayamum adalah menyapu debu yang suci ke muka dan dua tangan hingga siku dengan beberapa syarat tertentu.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Fungsinya adalah sebagai pengganti wudhu dalam keadaan tertentu sebagai rukhsah (keringanan) dari Allah SWT.</p>
+            <p id="text88" class="margin-left" style="text-align: justify;">Fungsinya adalah sebagai pengganti wudhu dalam keadaan tertentu sebagai rukhsah (keringanan) dari Allah SWT.</p>
             <br>
-            <p class="margin-left" style="text-align: justify;">Syarat tayamum :</p>
+            <p id="text89" class="margin-left" style="text-align: justify;">Syarat tayamum :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Ada uzur (alasan)</li>
-                <li>Sulit menemukan air</li>
-                <li>Menggunakan tanah/debu yang suci</li>
+                <li id="text90">Ada uzur (alasan)</li>
+                <li id="text91">Sulit menemukan air</li>
+                <li id="text92">Menggunakan tanah/debu yang suci</li>
             </ol>
             </p>
-            <h3 class="green"><b>Shalat</b></h3>
-            <h4 style="font-size: 15px;">Pengertian :</h4>
+            <h3 id="text93" class="green"><b>Shalat</b></h3>
+            <h4 id="text94" style="font-size: 15px;">Pengertian :</h4>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Secara bahasa : Do'a</li>
-                <li>Secara istilah : Suatu ibadah yang terdiri atas beberapa ucapan dan perbuatan tertentu,
+                <li id="text95">Secara bahasa : Do'a</li>
+                <li id="text96">Secara istilah : Suatu ibadah yang terdiri atas beberapa ucapan dan perbuatan tertentu,
                     diawali dengan takbirotul ikhrom dan diakhiri dengan salam dan beberapa syarat tertentu.</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Macam-Macam Shalat Fardhu (Wajib)</p>
+            <p id="text97" class="margin-left" style="text-align: justify;">Macam-Macam Shalat Fardhu (Wajib)</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Shalat subuh</li>
-                <li>Shalat zuhur</li>
-                <li>Shalat ashar</li>
-                <li>Shalat maghrib</li>
-                <li>Shalat isya</li>
+                <li id="text98">Shalat subuh</li>
+                <li id="text99">Shalat zuhur</li>
+                <li id="text100">Shalat ashar</li>
+                <li id="text101">Shalat maghrib</li>
+                <li id="text102">Shalat isya</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Syarat wajib shalat</p>
+            <p id="text103" class="margin-left" style="text-align: justify;">Syarat wajib shalat</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Islam</li>
-                <li>Berakal</li>
-                <li>Baligh</li>
-                <li>Suci dari hadas dan najis</li>
+                <li id="text104">Islam</li>
+                <li id="text105">Berakal</li>
+                <li id="text106">Baligh</li>
+                <li id="text107">Suci dari hadas dan najis</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Syarat sah shalat</p>
+            <p id="text108" class="margin-left" style="text-align: justify;">Syarat sah shalat</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Suci dari hadas besar dan kecil</li>
-                <li>Menutup aurat</li>
-                <li>Menghadap kiblat</li>
-                <li>Telah memasuki waktu shalat</li>
-                <li>Sudah mengetahui tata cara pelaksanaan</li>
+                <li id="text109">Suci dari hadas besar dan kecil</li>
+                <li id="text110">Menutup aurat</li>
+                <li id="text111">Menghadap kiblat</li>
+                <li id="text112">Telah memasuki waktu shalat</li>
+                <li id="text113">Sudah mengetahui tata cara pelaksanaan</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Rukun Shalat</p>
+            <p id="text114" class="margin-left" style="text-align: justify;">Rukun Shalat</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Niat</li>
-                <li>Berdiri bagi yang mampu</li>
-                <li>Takbiratul ikhram</li>
-                <li>Membaca surat Al-Fatihah pada setiap rakaat</li>
-                <li>Ruku' disertai tuma'ninah</li>
-                <li>I'tidal disertai tuma'ninah</li>
-                <li>Sujud dua kali dalam setiap rakaat disertai tuma'ninah</li>
-                <li>Duduk diantara dua sujud disertai tuma'ninah</li>
-                <li>Duduk pada tasahud akhir</li>
-                <li>Membaca tasahud akhir</li>
-                <li>Membaca shalawat kepada Nabi setelah membaca tasahud akhir</li>
-                <li>Memberi salam yang pertama (ke kanan)</li>
-                <li>Tertib</li>
+                <li id="text115">Niat</li>
+                <li id="text116">Berdiri bagi yang mampu</li>
+                <li id="text117">Takbiratul ikhram</li>
+                <li id="text118">Membaca surat Al-Fatihah pada setiap rakaat</li>
+                <li id="text119">Ruku' disertai tuma'ninah</li>
+                <li id="text120">I'tidal disertai tuma'ninah</li>
+                <li id="text121">Sujud dua kali dalam setiap rakaat disertai tuma'ninah</li>
+                <li id="text122">Duduk diantara dua sujud disertai tuma'ninah</li>
+                <li id="text123">Duduk pada tasahud akhir</li>
+                <li id="text124">Membaca tasahud akhir</li>
+                <li id="text125">Membaca shalawat kepada Nabi setelah membaca tasahud akhir</li>
+                <li id="text126">Memberi salam yang pertama (ke kanan)</li>
+                <li id="text127">Tertib</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Adzan dan Iqamah</p>
-            <p class="margin-left" style="text-align: justify;">Pengertian :</p>
+            <p id="text128" class="margin-left" style="text-align: justify;">Adzan dan Iqamah</p>
+            <p id="text129" class="margin-left" style="text-align: justify;">Pengertian :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Secara bahasa : Al-I'lan (pemberitahuan).</li>
-                <li>Secara istilah : pemberitahuan bahwa waktu untuk mengerjakan shalat fardhu telah tiba dengan menggunakan lafadz-lafadz yang telah ditentukan oleh syari'at islam.</li>
+                <li id="text130">Secara bahasa : Al-I'lan (pemberitahuan).</li>
+                <li id="text131">Secara istilah : pemberitahuan bahwa waktu untuk mengerjakan shalat fardhu telah tiba dengan menggunakan lafadz-lafadz yang telah ditentukan oleh syari'at islam.</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Orang yang melakukan Adzan ialah Muadzin/Bilal</p>
-            <p class="margin-left" style="text-align: justify;">Pengertian :</p>
+            <p id="text132" class="margin-left" style="text-align: justify;">Orang yang melakukan Adzan ialah Muadzin/Bilal</p>
+            <p id="text133" class="margin-left" style="text-align: justify;">Pengertian :</p>
             <p class="margin-left" style="text-align: justify;">
             <ol class="margin-left-list" type="a">
-                <li>Secara bahasa : Mendirikan.</li>
-                <li>Secara istilah : Seruan bahwa shalat segera didirikan dikerjakan dengan menggunakan lafaldz-lafaldz tertentu.</li>
+                <li id="text134">Secara bahasa : Mendirikan.</li>
+                <li id="text135">Secara istilah : Seruan bahwa shalat segera didirikan dikerjakan dengan menggunakan lafaldz-lafaldz tertentu.</li>
             </ol>
             </p>
-            <p class="margin-left" style="text-align: justify;">Iqamah dilakukan setelah Adzan.</p>
-            <p class="margin-left" style="text-align: justify;">Hukum adzan dan Iqamah adalah sunnah muakkad.
+            <p id="text136" class="margin-left" style="text-align: justify;">Iqamah dilakukan setelah Adzan.</p>
+            <p id="text137" class="margin-left" style="text-align: justify;">Hukum adzan dan Iqamah adalah sunnah muakkad.
                 Baik shalat dengan berjamaan maupun shalat sendirian (munfarid) sedangkan untuk shalat sunnah tidak disunnahkan Adzan dan Iqamah.</p>
         </div>
         <div class="col" style="text-align: right;">
@@ -356,6 +366,30 @@
         //     }
         // }
         // When the user clicks on the button, scroll to the top of the document
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("dicari").removeAttribute("disabled");
+            document.getElementById("btn-cari").removeAttribute("disabled");
+        });
+
+        document.getElementById('dicari').addEventListener('keyup', event => {
+            if (event.keyCode == 13) {
+                cari();
+            }
+        });
+
+        function cari() {
+            const input = document.getElementById('dicari').value.toLowerCase();
+            if (input != "") {
+                const regExp = new RegExp(input, "gi");
+                for (let i = '1'; i < 138; i++) {
+                    document.getElementById('text' + i).innerHTML = document.getElementById('text' + i).textContent.replace(regExp, "<mark id=mark>$&</mark>")
+                }
+                if (document.getElementById("mark")) {
+                    document.location.href = "<?= base_url('mulai/fiqih') ?>#mark";
+                }
+            }
+        }
+
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
