@@ -75,19 +75,78 @@ class Mulai extends CI_Controller
         $this->Crudmengaji->insertDataKomentar($arrKomentar);
         redirect('mulai/aqidah_akhlak');
     }
+
     public function tambahKomentarFiqih()
     {
         //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
         $this->load->view('mengaji/mpFiqih');
     }
+
     public function tambahKomentarKisah()
     {
         //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
         $this->load->view('mengaji/mpKisahNabi');
     }
+
     public function tambahKomentarTajwid()
     {
         //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
         $this->load->view('mengaji/mpTajwid');
+    }
+
+    public function deleteAqidah($idKomen)
+    {
+        $this->Crudmengaji->deleteDataKomentar($idKomen);
+        redirect('mulai/aqidah_akhlak');
+    }
+
+    public function deleteFiqih($idKomen)
+    {
+        $this->Crudmengaji->deleteDataKomentar($idKomen);
+        redirect('mulai/fiqih');
+    }
+
+    public function deleteKisah($idKomen)
+    {
+        $this->Crudmengaji->deleteDataKomentar($idKomen);
+        redirect('mulai/kisah_nabi');
+    }
+
+    public function deleteTajwid($idKomen)
+    {
+        $this->Crudmengaji->deleteDataKomentar($idKomen);
+        redirect('mulai/tajwid');
+    }
+
+    public function editAqidah($idKomen)
+    {
+        $komentar = $this->input->post('komentar');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $data = array(
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->updateDataKomentar($idKomen, $data);
+        redirect('mulai/aqidah_akhlak');
+    }
+
+    public function editFiqih($idKomen)
+    {
+        $this->Crudmengaji->updateDataKomentar($idKomen);
+        redirect('mulai/fiqih');
+    }
+
+    public function editKisah($idKomen)
+    {
+        $this->Crudmengaji->updateDataKomentar($idKomen);
+        redirect('mulai/kisah_nabi');
+    }
+
+    public function editTajwid($idKomen)
+    {
+        $this->Crudmengaji->updateDataKomentar($idKomen);
+        redirect('mulai/tajwid');
     }
 }

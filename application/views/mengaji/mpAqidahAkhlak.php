@@ -1,5 +1,6 @@
 <?php
 date_default_timezone_set("Asia/Jakarta");
+$username = $this->session->userdata('userName');
 ?>
 <!doctype html>
 <html lang="en">
@@ -378,10 +379,14 @@ date_default_timezone_set("Asia/Jakarta");
                     </div>
                     <div class="modal-body" style="margin-right: 0px;">
                         <form id="komen" action="<?= base_url('mulai/tambahKomentarAqidah') ?>" method="POST">
-                            <div class="mb-3" style="margin-right: 0px;">
-                                <label for="Nama" class="col-form-label">Nama:</label>
-                                <input type="text" class="form-control" id="Nama" name="nama" placeholder="Isi nama kamu ya!" required>
-                            </div>
+                            <?php if (!empty($username)) { ?>
+                                <input type="hidden" name="nama" value="<?= $username ?>">
+                            <?php } else { ?>
+                                <div class="mb-3" style="margin-right: 0px;">
+                                    <label for="Nama" class="col-form-label">Nama:</label>
+                                    <input type="text" class="form-control" id="Nama" name="nama" placeholder="Isi nama kamu ya!" required>
+                                </div>
+                            <?php } ?>
                             <div class="mb-3" style="margin-right: 0px;">
                                 <label for="Komentar" class="col-form-label">Komentar:</label>
                                 <textarea class="form-control" id="Komentar" name="komentar" required></textarea>
@@ -415,44 +420,49 @@ date_default_timezone_set("Asia/Jakarta");
                         <div class="isiKomen">
                             <?= $row->isi_komentar ?>
                         </div>
-                        <div class="btnLikeUnLike">
-                            <button class="btn btn-secondary" id="btnLike<?= $row->id_komentar ?>" onclick="btnLike<?= $row->id_komentar ?>()">
-                                <i class="fa-regular fa-thumbs-up"></i>
-                                <span id="counter">0</span>
-                            </button>
-                            <button class="btn btn-secondary" id="btnUnLike<?= $row->id_komentar ?>" onclick="btnUnLike<?= $row->id_komentar ?>()">
-                                <i class="fa-regular fa-thumbs-down"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <script>
-                        function btnLike<?= $row->id_komentar ?>() {
-                            element = document.getElementById("btnLike<?= $row->id_komentar ?>");
-                            if (element.className == "btn btn-secondary") {
-                                element.className = element.className.replace("btn btn-secondary", "btn btn-outline-primary");
-                                element.innerHTML = '<i class="fa-solid fa-thumbs-up"></i> 1';
-                                document.getElementById("btnUnLike<?= $row->id_komentar ?>").setAttribute("disabled", "");
-                            } else if (element.className == "btn btn-outline-primary") {
-                                element.className = element.className.replace("btn btn-outline-primary", "btn btn-secondary");
-                                element.innerHTML = '<i class="fa-regular fa-thumbs-up"></i> 0';
-                                document.getElementById("btnUnLike<?= $row->id_komentar ?>").removeAttribute("disabled");
-                            }
-                        }
+                        <?php if ($username == $row->nama) { ?>
+                            <div class="btnEditDelete">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit<?= $row->id_komentar ?>">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    <span>Edit</span>
+                                </button>
 
-                        function btnUnLike<?= $row->id_komentar ?>() {
-                            element = document.getElementById("btnUnLike<?= $row->id_komentar ?>");
-                            if (element.className == "btn btn-secondary") {
-                                element.className = element.className.replace("btn btn-secondary", "btn btn-outline-primary");
-                                element.innerHTML = '<i class="fa-solid fa-thumbs-down"></i>';
-                                document.getElementById("btnLike<?= $row->id_komentar ?>").setAttribute("disabled", "");
-                            } else if (element.className == "btn btn-outline-primary") {
-                                element.className = element.className.replace("btn btn-outline-primary", "btn btn-secondary");
-                                element.innerHTML = '<i class="fa-regular fa-thumbs-down"></i>';
-                                document.getElementById("btnLike<?= $row->id_komentar ?>").removeAttribute("disabled");
-                            }
-                        }
-                    </script>
-                <?php }
+                                <!-- edit Modal -->
+                                <div class="modal fade" id="staticBackdropEdit<?= $row->id_komentar ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content" style="margin-right: 0px;">
+                                            <div class="modal-header" style="margin-right: 0px;">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Komentar</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" style="margin-right: 0px;">
+                                                <form id="komen" action="<?= base_url('mulai/editAqidah') ?>/<?= $row->id_komentar ?>" method="POST">
+                                                    <input type="hidden" name="nama" value="<?= $username ?>">
+                                                    <div class="mb-3" style="margin-right: 0px;">
+                                                        <label for="Komentar" class="col-form-label">Komentar:</label>
+                                                        <textarea class="form-control" id="Komentar" name="komentar"><?= $row->isi_komentar ?></textarea>
+                                                    </div>
+                                                    <input type="hidden" name="tanggalWaktu" value="<?= date('d-m-Y') . ' ' . date('H:i:s') ?>">
+                                                    <input type="hidden" name="halaman" value="AqidahAkhlak">
+                                            </div>
+                                            <div class="modal-footer" style="margin-right: 0px;">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" name="submit" class="btn btn-success">Simpan</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-danger" onclick="document.location.href = '<?= base_url('mulai/deleteAqidah') ?>/<?= $row->id_komentar ?>'">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete</span>
+                                </button>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php
+                }
             } else { ?>
                 <h6 align="center">Belum ada yang memberikan komentar untuk mata pelajaran ini</h6>
             <?php } ?>
