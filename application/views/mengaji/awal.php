@@ -139,19 +139,19 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content" style="margin-right: 0px;">
                     <div class="modal-header" style="margin-right: 0px;">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Komentar</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Penilaian</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" style="margin-right: 0px;">
                         <?php $query = $this->db->get('rating');
                         if ($query->num_rows() > 0) {
                             foreach ($rating as $row) { ?>
-                                <div class="kolomKomen">
-                                    <div class="identitas">
+                                <div class="kolomKomen" style="margin-right: 0px;">
+                                    <div class="identitas" style="margin-right: 0px;">
                                         <h5><i class="fa-solid fa-user" style="padding-right: 10px;"></i> <?= $row->nama ?></h5>
-                                        <div class="tanggal"><?= $row->tanggal_waktu ?></div>
+                                        <div class="tanggal" style="margin-right: 0px;"><?= $row->tanggal_waktu ?></div>
                                     </div>
-                                    <div class="isiKomen">
+                                    <div class="isiKomen" style="margin-right: 0px;">
                                         <?php
                                         $rate = $row->rate;
                                         for ($i = 0; $i < $rate; $i++) { ?>

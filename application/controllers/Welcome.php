@@ -40,18 +40,18 @@ class Welcome extends CI_Controller
 		);
 		$this->session->set_userdata($data);
 
-		$halMapel = $this->input->post('halaman');
+		$rate = $this->input->post('rate');
 		$tanggalWaktu = $this->input->post('tanggalWaktu');
 
-		$arrKomentar = array(
-			'id_komentar' => '',
-			'halaman_mapel' => $halMapel,
+		$arrRating = array(
+			'id_rating' => '',
+			'rate' => $rate,
 			'nama' => $nama,
-			'isi_komentar' => $komentar,
+			'alasan' => $alasan,
 			'tanggal_waktu' => $tanggalWaktu
 		);
 
-		$this->Crudmengaji->insertDataKomentar($arrKomentar);
-		redirect('mulai/tajwid');
+		$this->Crudmengaji->insertRating($arrRating);
+		redirect('');
 	}
 }
