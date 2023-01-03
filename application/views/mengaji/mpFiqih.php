@@ -414,7 +414,7 @@ $username = $this->session->userdata('userName');
                             <?php } else { ?>
                                 <div class="mb-3" style="margin-right: 0px;">
                                     <label for="Nama" class="col-form-label">Nama:</label>
-                                    <input type="text" class="form-control" id="Nama" name="nama" placeholder="Isi nama kamu ya!" required>
+                                    <input type="text" class="form-control" id="Nama" name="nama" maxlength="20" placeholder="Isi nama kamu, dan jangan lebih dari 20 huruf!" required>
                                 </div>
                             <?php } ?>
                             <div class="mb-3" style="margin-right: 0px;">
