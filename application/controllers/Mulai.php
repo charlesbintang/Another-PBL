@@ -19,7 +19,10 @@ class Mulai extends CI_Controller
 
     public function aqidah_akhlak()
     {
-        $this->load->view('mengaji/mpAqidahAkhlak');
+        $halMapel = "AqidahAkhlak";
+        $queryKomenAqidah = $this->Crudmengaji->getDataKomentar($halMapel);
+        $data = array('qryKomen' => $queryKomenAqidah);
+        $this->load->view('mengaji/mpAqidahAkhlak', $data);
     }
 
     public function fiqih()
@@ -52,6 +55,11 @@ class Mulai extends CI_Controller
             ';
             exit;
         }
+
+        $data = array(
+            'userName' => $nama
+        );
+        $this->session->set_userdata($data);
 
         $halMapel = $this->input->post('halaman');
         $tanggalWaktu = $this->input->post('tanggalWaktu');

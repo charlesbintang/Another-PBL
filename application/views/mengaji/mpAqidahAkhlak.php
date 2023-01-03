@@ -397,16 +397,74 @@ date_default_timezone_set("Asia/Jakarta");
                 </div>
             </div>
         </div>
+    </main>
 
-        <!-- Kolom Komentar -->
+    <!-- Kolom Komentar -->
+    <section id="KomentarSection">
+        <h3>Komentar:</h3>
+        <div class="bagianKomen">
+            <?php
+            $query = $this->db->get_where('komentar', ['halaman_mapel' => 'AqidahAkhlak']);
+            if ($query->num_rows() > 0) {
+                foreach ($qryKomen as $row) { ?>
+                    <div class="kolomKomen">
+                        <div class="identitas">
+                            <h5><i class="fa-solid fa-user" style="padding-right: 10px;"></i> <?= $row->nama ?></h5>
+                            <div class="tanggal"><?= $row->tanggal_waktu ?></div>
+                        </div>
+                        <div class="isiKomen">
+                            <?= $row->isi_komentar ?>
+                        </div>
+                        <div class="btnLikeUnLike">
+                            <button class="btn btn-secondary" id="btnLike<?= $row->id_komentar ?>" onclick="btnLike<?= $row->id_komentar ?>()">
+                                <i class="fa-regular fa-thumbs-up"></i>
+                                <span id="counter">0</span>
+                            </button>
+                            <button class="btn btn-secondary" id="btnUnLike<?= $row->id_komentar ?>" onclick="btnUnLike<?= $row->id_komentar ?>()">
+                                <i class="fa-regular fa-thumbs-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <script>
+                        function btnLike<?= $row->id_komentar ?>() {
+                            element = document.getElementById("btnLike<?= $row->id_komentar ?>");
+                            if (element.className == "btn btn-secondary") {
+                                element.className = element.className.replace("btn btn-secondary", "btn btn-outline-primary");
+                                element.innerHTML = '<i class="fa-solid fa-thumbs-up"></i> 1';
+                                document.getElementById("btnUnLike<?= $row->id_komentar ?>").setAttribute("disabled", "");
+                            } else if (element.className == "btn btn-outline-primary") {
+                                element.className = element.className.replace("btn btn-outline-primary", "btn btn-secondary");
+                                element.innerHTML = '<i class="fa-regular fa-thumbs-up"></i> 0';
+                                document.getElementById("btnUnLike<?= $row->id_komentar ?>").removeAttribute("disabled");
+                            }
+                        }
+
+                        function btnUnLike<?= $row->id_komentar ?>() {
+                            element = document.getElementById("btnUnLike<?= $row->id_komentar ?>");
+                            if (element.className == "btn btn-secondary") {
+                                element.className = element.className.replace("btn btn-secondary", "btn btn-outline-primary");
+                                element.innerHTML = '<i class="fa-solid fa-thumbs-down"></i>';
+                                document.getElementById("btnLike<?= $row->id_komentar ?>").setAttribute("disabled", "");
+                            } else if (element.className == "btn btn-outline-primary") {
+                                element.className = element.className.replace("btn btn-outline-primary", "btn btn-secondary");
+                                element.innerHTML = '<i class="fa-regular fa-thumbs-down"></i>';
+                                document.getElementById("btnLike<?= $row->id_komentar ?>").removeAttribute("disabled");
+                            }
+                        }
+                    </script>
+                <?php }
+            } else { ?>
+                <h6 align="center">Belum ada yang memberikan komentar untuk mata pelajaran ini</h6>
+            <?php } ?>
+        </div>
+    </section>
 
 
 
 
 
 
-
-        <!-- <div class="bagian mt-50">
+    <!-- <div class="bagian mt-50">
             <h3><b>Klien</b></h3>
             <div class="name">
                 <img src="assets/profile/Foto Team Ustad Yana Mulyana.png" alt="Avatar" class="profile" style="width:200px">
@@ -440,7 +498,7 @@ date_default_timezone_set("Asia/Jakarta");
                 </div>
             </div>
         </div> -->
-    </main>
+
 
     <div class="row mt-5 no-gutters">
         <div class="row mb-3 text-center">
