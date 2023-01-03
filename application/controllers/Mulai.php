@@ -9,7 +9,6 @@ class Mulai extends CI_Controller
         $this->load->model('Crudmengaji');
         //load Helper for Form
         $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
     }
 
     public function index()

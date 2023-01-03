@@ -25,4 +25,15 @@ class Crudmengaji extends CI_Model
         $this->db->where('id_komentar', $idKomen);
         $this->db->update('komentar', $data);
     }
+
+    function getDataRating()
+    {
+        $query = $this->db->get('rating');
+        return $query->result();
+    }
+
+    function insertRating($data)
+    {
+        $this->db->insert('rating', $data);
+    }
 }

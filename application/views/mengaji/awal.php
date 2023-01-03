@@ -115,6 +115,14 @@
                 <h4 class="mt-3">Assalamu'alaikum, Selamat Datang</h4>
                 <h2 class="mt-3" style="color: #478a63; font-weight: bold;">Belajar Mengaji menjadi lebih mudah dan
                     praktis</h2>
+                <i class="fa-solid fa-star" style="color: gold;font-size: larger;"></i>
+                <span style="margin-right: 10px;"><?php
+                                                    $query = $this->db->query("SELECT ROUND(AVG(rate), 1) AS rata FROM rating;");
+                                                    foreach ($query->result() as $row) {
+                                                        echo $row->rata;
+                                                    }
+                                                    ?></span>
+                <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropRating">Lihat Ulasan</button>
                 <p class="lead mt-3">Belajar ngaji sekarang dengan gratis tanpa perlu login</p>
                 <a class="btn btn-success mt-3" href="<?= base_url('mulai') ?>" role="button">Mulai</a>
                 <!-- <p class="lead">
@@ -123,6 +131,45 @@
             </div>
             <div class="col" id="kanan">
                 <img src="<?= base_url('assets/') ?>Alquran.png" alt="Al-Quran" style="width:450px" id="AlQuran">
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdropRating" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="margin-right: 0px;">
+                    <div class="modal-header" style="margin-right: 0px;">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Komentar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="margin-right: 0px;">
+                        <?php $query = $this->db->get('rating');
+                        if ($query->num_rows() > 0) {
+                            foreach ($rating as $row) { ?>
+                                <div class="kolomKomen">
+                                    <div class="identitas">
+                                        <h5><i class="fa-solid fa-user" style="padding-right: 10px;"></i> <?= $row->nama ?></h5>
+                                        <div class="tanggal"><?= $row->tanggal_waktu ?></div>
+                                    </div>
+                                    <div class="isiKomen">
+                                        <?php
+                                        $rate = $row->rate;
+                                        for ($i = 0; $i < $rate; $i++) { ?>
+                                            <i class="fa-solid fa-star" style="color: gold;font-size: larger;"></i>
+                                        <?php } ?>
+                                        <br>
+                                        <?= $row->alasan ?>
+                                    </div>
+                                </div>
+                        <?php }
+                        } ?>
+
+                    </div>
+                    <div class="modal-footer" style="margin-right: 0px;">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
