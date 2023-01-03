@@ -27,22 +27,30 @@ class Mulai extends CI_Controller
 
     public function fiqih()
     {
-        $this->load->view('mengaji/mpFiqih');
+        $halMapel = "Fiqih";
+        $queryKomenAqidah = $this->Crudmengaji->getDataKomentar($halMapel);
+        $data = array('qryKomen' => $queryKomenAqidah);
+        $this->load->view('mengaji/mpFiqih', $data);
     }
 
     public function kisah_nabi()
     {
-        $this->load->view('mengaji/mpKisahNabi');
+        $halMapel = "KisahNabi";
+        $queryKomenAqidah = $this->Crudmengaji->getDataKomentar($halMapel);
+        $data = array('qryKomen' => $queryKomenAqidah);
+        $this->load->view('mengaji/mpKisahNabi', $data);
     }
 
     public function tajwid()
     {
-        $this->load->view('mengaji/mpTajwid');
+        $halMapel = "Tajwid";
+        $queryKomenAqidah = $this->Crudmengaji->getDataKomentar($halMapel);
+        $data = array('qryKomen' => $queryKomenAqidah);
+        $this->load->view('mengaji/mpTajwid', $data);
     }
 
     public function tambahKomentarAqidah()
     {
-        //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
         $nama = $this->input->post('nama');
         $komentar = $this->input->post('komentar');
 
@@ -78,20 +86,107 @@ class Mulai extends CI_Controller
 
     public function tambahKomentarFiqih()
     {
-        //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
-        $this->load->view('mengaji/mpFiqih');
+        $nama = $this->input->post('nama');
+        $komentar = $this->input->post('komentar');
+
+        if ($nama == '' || $komentar == '') {
+            echo '
+            <script>
+            alert("Mohon isi Nama atau Komentarnya!");
+            document.location.href = "' . base_url('mulai/fiqih') . '"
+            </script>
+            ';
+            exit;
+        }
+
+        $data = array(
+            'userName' => $nama
+        );
+        $this->session->set_userdata($data);
+
+        $halMapel = $this->input->post('halaman');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $arrKomentar = array(
+            'id_komentar' => '',
+            'halaman_mapel' => $halMapel,
+            'nama' => $nama,
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->insertDataKomentar($arrKomentar);
+        redirect('mulai/fiqih');
     }
 
     public function tambahKomentarKisah()
     {
-        //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
-        $this->load->view('mengaji/mpKisahNabi');
+        $nama = $this->input->post('nama');
+        $komentar = $this->input->post('komentar');
+
+        if ($nama == '' || $komentar == '') {
+            echo '
+            <script>
+            alert("Mohon isi Nama atau Komentarnya!");
+            document.location.href = "' . base_url('mulai/kisah_nabi') . '"
+            </script>
+            ';
+            exit;
+        }
+
+        $data = array(
+            'userName' => $nama
+        );
+        $this->session->set_userdata($data);
+
+        $halMapel = $this->input->post('halaman');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $arrKomentar = array(
+            'id_komentar' => '',
+            'halaman_mapel' => $halMapel,
+            'nama' => $nama,
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->insertDataKomentar($arrKomentar);
+        redirect('mulai/kisah_nabi');
     }
 
     public function tambahKomentarTajwid()
     {
-        //NTAR SAYA LANJUT KALAU UDH BUAT DI HALAMANNYA
-        $this->load->view('mengaji/mpTajwid');
+        $nama = $this->input->post('nama');
+        $komentar = $this->input->post('komentar');
+
+        if ($nama == '' || $komentar == '') {
+            echo '
+            <script>
+            alert("Mohon isi Nama atau Komentarnya!");
+            document.location.href = "' . base_url('mulai/tajwid') . '"
+            </script>
+            ';
+            exit;
+        }
+
+        $data = array(
+            'userName' => $nama
+        );
+        $this->session->set_userdata($data);
+
+        $halMapel = $this->input->post('halaman');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $arrKomentar = array(
+            'id_komentar' => '',
+            'halaman_mapel' => $halMapel,
+            'nama' => $nama,
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->insertDataKomentar($arrKomentar);
+        redirect('mulai/tajwid');
     }
 
     public function deleteAqidah($idKomen)
@@ -134,19 +229,43 @@ class Mulai extends CI_Controller
 
     public function editFiqih($idKomen)
     {
-        $this->Crudmengaji->updateDataKomentar($idKomen);
+        $komentar = $this->input->post('komentar');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $data = array(
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->updateDataKomentar($idKomen, $data);
         redirect('mulai/fiqih');
     }
 
     public function editKisah($idKomen)
     {
-        $this->Crudmengaji->updateDataKomentar($idKomen);
+        $komentar = $this->input->post('komentar');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $data = array(
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->updateDataKomentar($idKomen, $data);
         redirect('mulai/kisah_nabi');
     }
 
     public function editTajwid($idKomen)
     {
-        $this->Crudmengaji->updateDataKomentar($idKomen);
+        $komentar = $this->input->post('komentar');
+        $tanggalWaktu = $this->input->post('tanggalWaktu');
+
+        $data = array(
+            'isi_komentar' => $komentar,
+            'tanggal_waktu' => $tanggalWaktu
+        );
+
+        $this->Crudmengaji->updateDataKomentar($idKomen, $data);
         redirect('mulai/tajwid');
     }
 }

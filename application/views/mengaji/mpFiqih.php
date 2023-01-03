@@ -1,3 +1,7 @@
+<?php
+date_default_timezone_set("Asia/Jakarta");
+$username = $this->session->userdata('userName');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -351,10 +355,111 @@
                 Baik shalat dengan berjamaan maupun shalat sendirian (munfarid) sedangkan untuk shalat sunnah tidak disunnahkan Adzan dan Iqamah.</p>
         </div>
         <div class="col" style="text-align: right;">
+            <!-- Button trigger modal -->
+            <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="beri komentar"><i class="fa-regular fa-comment"></i> Komentar</button>
             <a class="btn btn-success me-2" role="button" href="<?= base_url('mulai') ?>"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
             <button class="btn btn-success me-2" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i> Ke Atas</button>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="margin-right: 0px;">
+                    <div class="modal-header" style="margin-right: 0px;">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Komentar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="margin-right: 0px;">
+                        <form id="komen" action="<?= base_url('mulai/tambahKomentarFiqih') ?>" method="POST">
+                            <?php if (!empty($username)) { ?>
+                                <input type="hidden" name="nama" value="<?= $username ?>">
+                            <?php } else { ?>
+                                <div class="mb-3" style="margin-right: 0px;">
+                                    <label for="Nama" class="col-form-label">Nama:</label>
+                                    <input type="text" class="form-control" id="Nama" name="nama" placeholder="Isi nama kamu ya!" required>
+                                </div>
+                            <?php } ?>
+                            <div class="mb-3" style="margin-right: 0px;">
+                                <label for="Komentar" class="col-form-label">Komentar:</label>
+                                <textarea class="form-control" id="Komentar" name="komentar" required></textarea>
+                            </div>
+                            <input type="hidden" name="tanggalWaktu" value="<?= date('d-m-Y') . ' ' . date('H:i:s') ?>">
+                            <input type="hidden" name="halaman" value="Fiqih">
+                    </div>
+                    <div class="modal-footer" style="margin-right: 0px;">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Kirim</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Kolom Komentar -->
+    <section id="KomentarSection">
+        <h3>Komentar:</h3>
+        <div class="bagianKomen">
+            <?php
+            $query = $this->db->get_where('komentar', ['halaman_mapel' => 'Fiqih']);
+            if ($query->num_rows() > 0) {
+                foreach ($qryKomen as $row) { ?>
+                    <div class="kolomKomen">
+                        <div class="identitas">
+                            <h5><i class="fa-solid fa-user" style="padding-right: 10px;"></i> <?= $row->nama ?></h5>
+                            <div class="tanggal"><?= $row->tanggal_waktu ?></div>
+                        </div>
+                        <div class="isiKomen">
+                            <?= $row->isi_komentar ?>
+                        </div>
+                        <?php if ($username == $row->nama) { ?>
+                            <div class="btnEditDelete">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit<?= $row->id_komentar ?>">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    <span>Edit</span>
+                                </button>
+
+                                <!-- edit Modal -->
+                                <div class="modal fade" id="staticBackdropEdit<?= $row->id_komentar ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content" style="margin-right: 0px;">
+                                            <div class="modal-header" style="margin-right: 0px;">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Komentar</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" style="margin-right: 0px;">
+                                                <form id="komen" action="<?= base_url('mulai/editFiqih') ?>/<?= $row->id_komentar ?>" method="POST">
+                                                    <input type="hidden" name="nama" value="<?= $username ?>">
+                                                    <div class="mb-3" style="margin-right: 0px;">
+                                                        <label for="Komentar" class="col-form-label">Komentar:</label>
+                                                        <textarea class="form-control" id="Komentar" name="komentar"><?= $row->isi_komentar ?></textarea>
+                                                    </div>
+                                                    <input type="hidden" name="tanggalWaktu" value="<?= date('d-m-Y') . ' ' . date('H:i:s') ?>">
+                                                    <input type="hidden" name="halaman" value="Fiqih">
+                                            </div>
+                                            <div class="modal-footer" style="margin-right: 0px;">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" name="submit" class="btn btn-success">Simpan</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-danger" onclick="document.location.href = '<?= base_url('mulai/deleteFiqih') ?>/<?= $row->id_komentar ?>'">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete</span>
+                                </button>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php
+                }
+            } else { ?>
+                <h6 align="center">Belum ada yang memberikan komentar untuk mata pelajaran ini</h6>
+            <?php } ?>
+        </div>
+    </section>
 
     <div class="row mt-5 no-gutters">
         <div class="row mb-3 text-center">
